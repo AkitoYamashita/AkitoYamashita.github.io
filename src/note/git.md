@@ -8,6 +8,7 @@ Reference
 
 ```bash
 ssh-keygen -t rsa -C ""
+//ssh-keygen -t rsa -b 4096 -C ""
 mv id_rsa authorized_keys
 ```
 
@@ -120,4 +121,18 @@ curl --digest --user username:password https://bitbucket.org/username/repo/get/m
 ```bash
 [remote "origin"]
 url = git@github.com:username/newrepo.git
+```
+
+### for jetbrains markdown ignore
+
+```.gitignore
+*.iml
+**/.idea/*
+!**/.idea/runConfigurations
+```
+
+### ファイル日時/パーミッションの更新でaddされないようにする
+
+```bash
+git config core.filemode false
 ```

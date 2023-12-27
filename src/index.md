@@ -16,7 +16,15 @@ sidebar: false
   - [EC2だけでiOSアプリをリリースしたときのログ](./log/ec2mac.md)
   - [FlutterでInstantAppsを作ってリリースしたときのログ](./log/instatapp.md)
 - Note
-  - [VuePressV2](./note/vuepress.md)
+  - Site
+    - [VuePressV2](./note/vuepress.md)
+    - [mdBook](./note/mdbook.md)
+    - [Rocket](./note/rocket.md)
   - [Git](./note/git.md)
+  - [Bash](./note/bash.md)
+  - [HTML](./note/html.md)
+  - [PHP](./note/php.md)
+  - [Unity](./note/unity.md)
+  - [Windows](./note/windows.md)
 - Example
   - [Markdown](./example/markdown.md)
