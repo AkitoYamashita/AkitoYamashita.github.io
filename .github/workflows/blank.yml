@@ -6,10 +6,15 @@ on:
     branches: [ "master" ]
   workflow_dispatch:
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+
+      - name: Run a one-line script
+        run: |
+          mkdir artifact_dir
+          date > artifact_dir/index.html
 
       - name: setup node
         uses: actions/setup-node@v2
@@ -19,40 +24,26 @@ jobs:
       - name: npm
         run: npm ci
 
-      - name: Build
-        run: npm run src:build
+      - name: build
+        run: ./node_modules/vuepress/bin/vuepress.js build src
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: actions/upload-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./src/.vuepress/dist
-  # build:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - name: Run a one-line script
-  #       run: echo Hello, world!
-  #     - name: Run a multi-line script
-  #       run: |
-  #         mkdir data
-  #         echo "<h1>Hello GitHub Pages!</h1>" > data/index.html
-  #     - uses: actions/upload-artifact@v3
-  #       with:
-  #         name: my_site
-  #         path: data
-  #     - uses: actions/upload-pages-artifact@v1
-  #       with:
-  #         path: data
-  # deploy:
-  #   needs: build
-  #   runs-on: ubuntu-latest 
-  #   environment:
-  #     name: github-pages
-  #     url: ${{ steps.deployment.outputs.page_url }}
-  #   permissions:
-  #     pages: write
-  #     id-token: write
-  #   steps:
-  #     - uses: actions/deploy-pages@v1
-  #       id: deployment
+          name: my_site
+          path: artifact_dir
+
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: artifact_dir
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest 
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/deploy-pages@v1
+        id: deployment
