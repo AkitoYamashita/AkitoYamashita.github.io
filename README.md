@@ -1,3 +1,3 @@
 # Note
 
-[workflow](./blob/master/.github/workflows/vuepress.yml)
+[workflow-vuepress](./.github/workflows/vuepress.yml)
