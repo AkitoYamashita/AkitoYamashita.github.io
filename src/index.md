@@ -8,6 +8,7 @@ sidebar: false
 
 - aws
   - [cloud formation template](./aws/cfn/)
+    - [S3](./aws/cfn/s3)
     - [Pipeline](./aws/cfn/pipeline)
     - [CodeBuild](./aws/cfn/codebuild)
     - [CodeCommit](./aws/cfn/codecommit)
