@@ -1,5 +1,7 @@
 # Dynamodb
 
+## cfn-dynamodb.yml
+
 ```yml
 AWSTemplateFormatVersion: 2010-09-09
 

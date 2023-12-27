@@ -7,7 +7,8 @@ sidebar: false
 備忘録
 
 - aws
-  - cloud formation template
+  - [cloud formation template](./aws/cfn/)
+    - [Pipeline](./aws/cfn/pipeline)
     - [CodeBuild](./aws/cfn/codebuild)
     - [CodeCommit](./aws/cfn/codecommit)
     - [DynamoDB](./aws/cfn/dynamodb)
