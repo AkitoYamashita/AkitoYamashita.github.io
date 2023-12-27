@@ -20,12 +20,12 @@ guide:
 install:
 	npm install
 dev:
-	./node_modules/vuepress/bin/vuepress.js dev src --debug --config ./src/.vuepress/config.js
+	./node_modules/vuepress/bin/vuepress.js dev src --debug --config ./src/.vuepress/config.ts
 serve:
 	./node_modules/vuepress/bin/vuepress.js dev src --host 0.0.0.0 --no-watch --clean-cache --clean-temp 
 build:
 	./node_modules/vuepress/bin/vuepress.js build src --clean-cache --clean-temp 
 config:
-	vim ./src/.vuepress/config.js
+	vim ./src/.vuepress/config.ts
 gip: # global ip
 	curl ifconfig.io
