@@ -23,6 +23,7 @@ sidebar: false
   - [Git](./note/git.md)
   - [Bash](./note/bash.md)
   - [HTML](./note/html.md)
+  - [Javascript](./note/javascript.md)
   - [PHP](./note/php.md)
   - [Unity](./note/unity.md)
   - [Windows](./note/windows.md)

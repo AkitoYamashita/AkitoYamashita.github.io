@@ -329,7 +329,7 @@ public static GameObject Spine(GameObject parent,string path,string animation=nu
 2. Gifアニメを再生させたいGameObjectに`Uni Gif Image`と`RawImage`,`Uni Gif Image Aspect`のコンポーネントを追加
 3. `Uni Gif Image`の`Raw Image`と`Img  Aspect Crl`に`RawImage`,`Uni Gif Image Aspect`を設定
   (シーン再生からGif再生させたい場合は「Load On Start」にチェックをいれる)
-4. `Load On Start Url`に再生させたいGifアニメのファイル名(Ex:`onoie.gif`)を指定する
+4. `Load On Start Url`に再生させたいGifアニメのファイル名(Ex:`xxxx.gif`)を指定する
 5. `/StreamingAssets`ディレクトリにgif画像を配置
 
 ## 簡易Skyboxを作る
