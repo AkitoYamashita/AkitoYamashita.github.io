@@ -1,9 +1,10 @@
 # EC2Mac
 
-物理MacPCを一切用意せずクラウド環境だけでiOSアプリリリースまでしたときのログ  
+Macの実機を一切用意せずクラウド環境だけでiOSアプリリリースまでしたときのログ  
 
 ## 環境
 
+- 日時:2023/12/23
 - 作業元PC: Windows11
 - 作業先PC: macOS Venture 13.6.1
 
@@ -53,7 +54,7 @@ Reference: <https://qiita.com/kodai_ari/items/c7bfa235768f525bf8cd>
 8. VNCクライアントをインストール
     - [RealVNV](https://www.realvnc.com/)
     - [UltraVNC](https://forest.watch.impress.co.jp/library/software/ultravnc/download_11198.html)
-9. VNCで[EC2_INSTANCE_IP]:5900で接続
+9. VNCで`[EC2_INSTANCE_IP]:5900`へ接続
 10. Finder設定(隠しファイルの表示)\
     `defaults write com.apple.finder AppleShowAllFiles true && killall Finder`
 11. brewのインストール: <https://brew.sh/ja/>
@@ -250,7 +251,7 @@ Provisioning Profile => AppID + Certificate + DeviceID List
 
 ## メモ
 
-### for AWS
+### for AWS(未確認)
 
 ```json
 RunInstances
@@ -356,7 +357,7 @@ AuthorizeSecurityGroupIngress
 }
 ```
 
-### for CLI
+### for CLI(未確認)
 
 1. CLIでの証明書署名要求CSRファイル作成
     - <https://qiita.com/shtnkgm/items/2c9c5eb432c940d66e05>

@@ -14,8 +14,6 @@
 [V2公式GettingStarted](https://v2.vuepress.vuejs.org/guide/getting-started.html)
 
 ```bash
-mkdir note
-cd note
 npm init
 npm install -D vuepress@next
 ./node_modules/vuepress/bin/vuepress.js dev docs

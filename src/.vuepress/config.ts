@@ -9,10 +9,11 @@ import { externalLinkIconPlugin } from '@vuepress/plugin-external-link-icon'
 export default defineUserConfig ({
   // lang: "ja",
   lang: 'ja-JP',
-  title: "Note",
+  title: "AkitoYamashita.github.io",
   description: "備忘録",
   dest: "docs/",
-  base: "/note/",
+  base: "/",
+  // base: "/note/",
   plugins: [
     //https://v2.vuepress.vuejs.org/reference/plugin/external-link-icon.html
     externalLinkIconPlugin({}),
