@@ -45,9 +45,8 @@
 
 ```markdown
 ![alt](url)
-```
-
 ![favicon](/favicon.ico)
+```
 
 ## ヘッダー
 
