@@ -1,4 +1,4 @@
-# Pipeline
+# CodePipeline
 
 ## cfn-pipeline.yml
 
