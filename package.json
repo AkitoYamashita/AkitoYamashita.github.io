@@ -1,0 +1,18 @@
+{
+  "name": "vuepress-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev src",
+    "docs:build": "vuepress build src"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mermaid": "^10.6.1",
+    "vuepress": "^2.0.0-rc.0",
+    "vuepress-plugin-mermaidjs": "^2.0.0-beta.2",
+    "vuepress-plugin-search-pro": "^2.0.0-rc.7"
+  }
+}
