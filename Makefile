@@ -24,7 +24,7 @@ dev:
 serve:
 	./node_modules/vuepress/bin/vuepress.js dev src --host 0.0.0.0 --no-watch --clean-cache --clean-temp 
 build:
-	./node_modules/vuepress/bin/vuepress.js build src
+	./node_modules/vuepress/bin/vuepress.js build src --clean-cache --clean-temp 
 config:
 	vim ./src/.vuepress/config.js
 gip: # global ip
