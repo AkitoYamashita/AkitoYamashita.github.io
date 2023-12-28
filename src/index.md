@@ -4,6 +4,9 @@ sidebar: false
 
 # README
 
+- Log
+  - [EC2だけでiOSアプリをリリースしたときのログ](./log/ec2mac.md)
+  - [FlutterでInstantAppsを作ってリリースしたときのログ](./log/instatapp.md)
 - AWS
   - [CloudFormation](./aws/cfn/s3.md)
     - [S3](./aws/cfn/s3.md)
@@ -12,9 +15,6 @@ sidebar: false
     - [CodeCommit](./aws/cfn/codecommit.md)
     - [DynamoDB](./aws/cfn/dynamodb.md)
     - [IAM Role(Policy)](./aws/cfn/role-policy.md)
-- Log
-  - [EC2だけでiOSアプリをリリースしたときのログ](./log/ec2mac.md)
-  - [FlutterでInstantAppsを作ってリリースしたときのログ](./log/instatapp.md)
 - Note
   - Site
     - [VuePressV2](./note/vuepress.md)
