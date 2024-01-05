@@ -34,8 +34,8 @@ ssh -T git@bitbucket.org
 ### Config
 
 ```bash
-git config --global user.name TransAssist
-git config --global user.email x.assists@gmail.com
+git config --global user.name [NAME]
+git config --global user.email [EMAIL]
 ```
 
 ### Reset
