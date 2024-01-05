@@ -1,5 +1,7 @@
 # CodeBuild
 
+動作確認済み@2023/11/01
+
 ## cfn-codebuild.md
 
 ```yml

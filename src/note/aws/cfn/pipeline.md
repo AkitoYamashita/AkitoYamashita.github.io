@@ -1,5 +1,7 @@
 # CodePipeline
 
+動作確認済み@2023/11/01
+
 ## cfn-pipeline.yml
 
 ```yml

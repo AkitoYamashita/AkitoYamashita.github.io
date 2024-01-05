@@ -1,5 +1,7 @@
 # Role and Policy
 
+動作確認済み@2023/11/01
+
 ## cfn-role-policy.yml
 
 ```yml

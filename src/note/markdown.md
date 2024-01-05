@@ -114,6 +114,19 @@ echo "HelloWorld"
 ```
 ````
 
+※リスト内にコードブロックを含める場合
+
+````markdown
+1. list1
+2. list2
+
+    ```bash
+    list in codeblock
+    ```
+
+3. list3
+````
+
 ## 引用ブロック
 
 * `>`の後にスペースを入れない(MD027)

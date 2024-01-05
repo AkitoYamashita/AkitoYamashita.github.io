@@ -1,4 +1,6 @@
-# EC2(未確認)
+# EC2
+
+動作未確認
 
 ```yml
 AWSTemplateFormatVersion: "2010-09-09"

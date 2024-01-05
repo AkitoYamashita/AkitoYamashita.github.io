@@ -251,7 +251,9 @@ Provisioning Profile => AppID + Certificate + DeviceID List
 
 ## メモ
 
-### for AWS(未確認)
+### for AWS
+
+動作未確認
 
 ```json
 RunInstances
@@ -357,7 +359,9 @@ AuthorizeSecurityGroupIngress
 }
 ```
 
-### for CLI(未確認)
+### for CLI
+
+動作未確認
 
 1. CLIでの証明書署名要求CSRファイル作成
     - <https://qiita.com/shtnkgm/items/2c9c5eb432c940d66e05>
