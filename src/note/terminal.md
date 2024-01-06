@@ -10,3 +10,30 @@
 * シンボリックリンクの向き先変更=>`ln -nfs TARGET .`
 * ワンライナーで設定書き換え=>`sed -i -e "s/^upload_max_filesize = 2M$/upload_max_filesize = 500M/g" /etc/php.ini`
 * DOSやWSLを見やすくする=>[ColorTool](https://qiita.com/ysk_n/items/21d9e3fb8b8f22ab3476)
+
+## Anyenv導入
+
+```bash
+git clone https://github.com/anyenv/anyenv ~/.anyenv
+exec $(SHELL) -l
+anyenv install --init
+anyenv install --list
+anyenv install nodenv
+anyenv install rbenv
+anyenv install pyenv
+```
+
+PATHを通す
+
+```bash
+#vim ~/.zshrc
+if [ -e "$HOME/.anyenv" ]
+then
+    export ANYENV_ROOT="$HOME/.anyenv"
+    export PATH="$ANYENV_ROOT/bin:$PATH"
+    if command -v anyenv 1>/dev/null 2>&1
+    then
+        eval "$(anyenv init -)"
+    fi
+fi
+```

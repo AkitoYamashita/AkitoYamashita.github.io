@@ -11,7 +11,7 @@ sidebar: false
 - Note
   - [Markdown](./note/markdown.md)
   - [Git](./note/git.md)
-  - [Bash](./note/bash.md)
+  - [Terminal](./note/terminal.md)
   - [HTML](./note/html.md)
   - [Javascript](./note/javascript.md)
   - [PHP](./note/php.md)
