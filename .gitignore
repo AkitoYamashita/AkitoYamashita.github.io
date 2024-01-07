@@ -1,5 +1,7 @@
+## VuePress
 docs
-
-node_modules
 .temp
 .cache
+
+## Node
+node_modules

@@ -9,9 +9,9 @@ sidebar: false
   - [EC2だけでiOSアプリをリリースしたときのログ](./log/ec2mac.md)
   - [FlutterでInstantAppsを作ってリリースしたときのログ](./log/instatapp.md)
 - Note
+  - [Terminal](./note/terminal.md)
   - [Markdown](./note/markdown.md)
   - [Git](./note/git.md)
-  - [Terminal](./note/terminal.md)
   - [HTML](./note/html.md)
   - [Javascript](./note/javascript.md)
   - [PHP](./note/php.md)
