@@ -56,8 +56,10 @@
     `Certificate Manager`
     `AppConfig`
     `EFS`
-    `SimpleNotificationService`
+    `Simple Notification Service`
     `WorkSpaces`
+    `SystemsManager`
+    `AmazonEventBridge`
   - Atlassian：
     `Jira`
     `BitBucket`

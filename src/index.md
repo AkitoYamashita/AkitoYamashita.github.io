@@ -15,6 +15,7 @@ sidebar: false
   - [HTML](./note/html.md)
   - [Javascript](./note/javascript.md)
   - [PHP](./note/php.md)
+  - [Python](./note/python.md)
   - [Unity](./note/unity.md)
   - [Windows](./note/windows.md)
   - Site
