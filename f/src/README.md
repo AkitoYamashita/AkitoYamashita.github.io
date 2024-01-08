@@ -10,4 +10,8 @@
 
 ## File
 
-- [md_generate.sh](md_generate.sh)
+### [md_generate.sh](md_generate.sh)
+
+```bash
+<!-- @include: md_generate.sh -->
+```
