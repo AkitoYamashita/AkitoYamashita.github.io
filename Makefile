@@ -26,11 +26,12 @@ link:
 	ln -s ../../../f/src ./md/.vuepress/public/src 
 	rm -f ./md/src
 	ln -s ../f/src ./md/src 
+build:clean link
+	./node_modules/vuepress/bin/vuepress.js build md --clean-cache --clean-temp 
+workflows:build # call by github action
+config:
+	vim ./md/.vuepress/config.ts
 dev:link
 	./node_modules/vuepress/bin/vuepress.js dev md --debug --config ./md/.vuepress/config.ts
 serve:link
 	./node_modules/vuepress/bin/vuepress.js dev md --host 0.0.0.0 --no-watch --clean-cache --clean-temp 
-build:clean link
-	./node_modules/vuepress/bin/vuepress.js build md --clean-cache --clean-temp 
-config:
-	vim ./md/.vuepress/config.ts
