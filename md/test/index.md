@@ -1,4 +1,4 @@
-# Sandbox
+# Test
 
 ## plugin@register-components
 

@@ -1,5 +1,13 @@
+## F
+/f/io/*
+!/f/io/.gitkeep
+
+## VuePress Extend
+/docs
+/md/.vuepress/public/src
+/md/src
+
 ## VuePress
-docs
 .temp
 .cache
 
