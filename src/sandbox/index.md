@@ -2,6 +2,8 @@
 
 ## plugin@register-components
 
+### MyComponent
+
 <MyComponent/>
 
 ## plugin@md-enhance
