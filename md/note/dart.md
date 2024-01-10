@@ -119,7 +119,7 @@ SEARCH_TARGET="$BASE/oas"
 SEARCH_TARGET_ALLOW=("json" "yaml" "yml")
 SEARCH_TARGET_SKIP=(
     ".gitkeep"
-    "example.yml"
+    #"example.yml"
 )
 
 ## clean
@@ -140,7 +140,7 @@ while read -r FP; do #echo "file path: $FP";
             ## https://openapi-generator.tech/docs/generators/dart/
 
             ## dirctory generate for .openapi-generator-ignore
-            mkdir -p ${BASE}/client/${FBN} && cp -n $BASE/.openapi-generator-ignore ${BASE}/client/${FBN}/
+            # mkdir -p ${BASE}/client/${FBN} && cp -n $BASE/.openapi-generator-ignore ${BASE}/client/${FBN}/
             
             ## validate
             java -jar ${OPENAPI} validate -i ${BASE}/oas/${FBN}.${FE}
