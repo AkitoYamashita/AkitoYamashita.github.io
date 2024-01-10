@@ -63,10 +63,10 @@ ElevatedButton(
 ### OpenApiGenerator
 
 ```yml
-# ./../openapi/oas/example.yml
+# ./openapi/oas/example.yml
 openapi: 3.0.3
 info:
-  title: "Sample API"
+  title: "Example API"
   version: "1.0.0"
 
 paths:
@@ -107,8 +107,18 @@ components:
           type: string 
 ```
 
+.openapi-generator-ignore
+
+```txt
+README.md
+.gitignore
+.travis.yml
+analysis_options.yaml
+git_push.sh
+```
+
 ```bash
-## ./../openapi/setup.sh
+## ./openapi/setup.sh
 BASE="$(dirname "$(readlink -f "${BASH_SOURCE:-0}")")"
 OPENAPI="$BASE/openapi-generator-cli.jar"
 if [[ ! -f "${OPENAPI}" ]] ; then
@@ -140,7 +150,7 @@ while read -r FP; do #echo "file path: $FP";
             ## https://openapi-generator.tech/docs/generators/dart/
 
             ## dirctory generate for .openapi-generator-ignore
-            # mkdir -p ${BASE}/client/${FBN} && cp -n $BASE/.openapi-generator-ignore ${BASE}/client/${FBN}/
+            mkdir -p ${BASE}/client/${FBN} && cp -n $BASE/.openapi-generator-ignore ${BASE}/client/${FBN}/
             
             ## validate
             java -jar ${OPENAPI} validate -i ${BASE}/oas/${FBN}.${FE}
@@ -183,13 +193,15 @@ analyzer:
 
 ```dart
 // widget_build.dart
+import "package:example/api.dart" as example;
+...
 ElevatedButton(
     onPressed: () async {
-        final endpoint.DefaultApi api = endpoint.DefaultApi(
-            endpoint.ApiClient(basePath: "https://example.com/"),
-        );
-        final String dateid = (await api.dateidGet())!;
-        print("dateid:$dateid");
+      final example.DefaultApi api = example.DefaultApi(
+        example.ApiClient(basePath: "https://example.com/api/v1"),
+      );
+      final String dateid = (await api.dateidGet())!;
+      print("dateid:$dateid");
     },
     child: const Text("OpenAPI-Generator"),
 ),
