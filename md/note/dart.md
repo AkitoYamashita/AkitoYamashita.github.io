@@ -81,29 +81,33 @@ paths:
               schema:
                 type: string
                 example: "20230315165159958"
-  "/api/ok":
+  "/posts":
     get:
-      summary: "ok"
+      summary: "posts"
       responses:
         "200":
-          description: "成功"
+          description: "post list"
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/dateid'
+                  $ref: '#/components/schemas/post'
                 example:
                   - message: ok
 
 components:
   schemas:
-    dateid:
+    post:
       type: object
       required:
-        - message
+        - id
       properties:
-        message:
+        id:
+          type: int
+        title:
+          type: string 
+        author:
           type: string 
 ```
 
@@ -193,15 +197,21 @@ analyzer:
 
 ```dart
 // widget_build.dart
+import 'package:example/api.dart';
 import "package:example/api.dart" as example;
 ...
 ElevatedButton(
     onPressed: () async {
       final example.DefaultApi api = example.DefaultApi(
-        example.ApiClient(basePath: "https://example.com/api/v1"),
+        example.ApiClient(
+          basePath: "https://example.com/api/v1",
+          basePath: "http://localhost:3000",
+        ),
       );
       final String dateid = (await api.dateidGet())!;
       print("dateid:$dateid");
+      //final List<Post> posts = (await api.postsGet())!;
+      //print("posts:${posts.toString()}");
     },
     child: const Text("OpenAPI-Generator"),
 ),
