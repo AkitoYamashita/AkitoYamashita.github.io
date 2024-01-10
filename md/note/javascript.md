@@ -1,5 +1,26 @@
 # JavaScript
 
+## json-server
+
+1. `npm install json-server --save-dev`
+2. `vim db.json`
+
+  db.json
+
+  ```json
+  {
+    "posts": [
+      { "id": 1, "title": "title1", "author": "author1" },
+      { "id": 2, "title": "title2", "author": "author2" }
+    ],
+    "comments": [
+      { "id": 1, "body": "body", "postId": 1 }
+    ]
+  }
+  ```
+
+3. `json-server --watch db.json`
+
 ## LambdaからBASIC認証付きのHTTPSアクセス
 
 ```js
