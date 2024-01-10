@@ -111,7 +111,7 @@ components:
           type: string 
 ```
 
-.openapi-generator-ignore
+./openapi/.openapi-generator-ignore
 
 ```txt
 README.md
