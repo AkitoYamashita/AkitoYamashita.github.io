@@ -2,6 +2,26 @@
 
 ## Flutter
 
+### Dart-define-from-file
+
+```json
+// dev.json
+{
+    "FLAVOR": "dev",
+    "APP_NAME": "APP(DEV)",
+    "APP_ID": "dev.app",
+}
+```
+
+```bash
+flutter run --dart-define-from-file=conf/dev.json
+flutter build ios --dart-define-from-file=conf/dev.json
+```
+
+```dart
+print(String.fromEnvironment('FLAVOR'))
+```
+
 ### Retrofit
 
 ```dart
@@ -51,7 +71,7 @@ ElevatedButton(
         final client = RestClient(dio);
         await client.getTasks().then((it) {
             for (final task in it) {
-            Stra.log("Task:${task.id}/${task.name}");
+            print("Task:${task.id}/${task.name}");
             }
         });
     },

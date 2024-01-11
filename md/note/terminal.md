@@ -13,6 +13,26 @@
   * Moをワンライナーで準備=>`[ ! -e "$(dirname "$(readlink -f "${BASH_SOURCE:-0}")")/mo" ] && curl -sSLO https://raw.githubusercontent.com/tests-always-included/mo/master/mo && chmod 744 mo`
 * DOSやWSLを見やすくする=>[ColorTool](https://qiita.com/ysk_n/items/21d9e3fb8b8f22ab3476)
 
+## Makefileテンプレート
+
+```Makefile
+#!/usr/bin/make -f
+##
+#SHELL=/bin/sh
+#SHELL=/bin/bash
+SHELL=/usr/bin/env bash
+DIR:=$(realpath $(firstword $(MAKEFILE_LIST)))
+BASE:=$(shell dirname ${DIR})
+##
+_readme:
+  @echo '--- Makefile Task List ---'
+  @grep '^[^#[:space:]|_][a-z|_]*:' Makefile
+base:
+  @echo ${BASE}
+gip: # global ip
+  curl ifconfig.io
+```
+
 ## Anyenv導入
 
 ```bash

@@ -13,25 +13,7 @@ BASE:=$(shell dirname ${DIR})
 _readme:
 	@echo '--- Makefile Task List ---'
 	@grep '^[^#[:space:]|_][a-z|_]*:' Makefile
+base:
+	@echo ${BASE}
 gip: # global ip
 	curl ifconfig.io
-base: # base path
-	@echo ${BASE}
-guide: # open guide page by WSL
-	/mnt/c/Windows/explorer.exe https://v2.vuepress.vuejs.org/guide/
-clean:
-	rm -rf ./node_modules && npm ci
-link:
-	rm -f ./md/.vuepress/public/src
-	ln -s ../../../f/src ./md/.vuepress/public/src 
-	rm -f ./md/src
-	ln -s ../f/src ./md/src 
-build:clean link
-	./node_modules/vuepress/bin/vuepress.js build md --clean-cache --clean-temp 
-workflows:build # call by github action
-config:
-	vim ./md/.vuepress/config.ts
-dev:link
-	./node_modules/vuepress/bin/vuepress.js dev md --debug --config ./md/.vuepress/config.ts
-serve:link
-	./node_modules/vuepress/bin/vuepress.js dev md --host 0.0.0.0 --no-watch --clean-cache --clean-temp 
