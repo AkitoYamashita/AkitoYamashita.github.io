@@ -7,8 +7,8 @@
 
 ## file
 
-- [README.md](/README.md)
-- [.gitkeep](/.gitkeep)
+- [README.md](README.md)
+- [.gitkeep](.gitkeep)
 
 ## [.gitkeep]([.gitkeep)
 

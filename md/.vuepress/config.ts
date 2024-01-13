@@ -1,8 +1,9 @@
 import { defineUserConfig } from "vuepress";
+import { viteBundler } from 'vuepress'
+import { defaultTheme } from 'vuepress'
 import { path } from '@vuepress/utils'
-import { defaultTheme } from '@vuepress/theme-default'
-import type { DefaultThemeOptions } from 'vuepress'
-//extension
+
+// Plugin
 import { searchProPlugin } from "vuepress-plugin-search-pro";
 import { externalLinkIconPlugin } from '@vuepress/plugin-external-link-icon'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
@@ -16,12 +17,13 @@ export default defineUserConfig ({
   description: "備忘録",
   dest: "docs/",
   base: "/",
-  //public: path.resolve(__dirname, './public/'),
-  // public: path.resolve(__dirname, './../../src/'),
+  public: path.resolve(__dirname, './public/'),
+  bundler: viteBundler(),
+  theme: defaultTheme(),
   plugins: [
-    //https://v2.vuepress.vuejs.org/reference/plugin/external-link-icon.html
+    // https://v2.vuepress.vuejs.org/reference/plugin/external-link-icon.html
     externalLinkIconPlugin({}),
-    //https://plugin-search-pro.vuejs.press/
+    // https://plugin-search-pro.vuejs.press/
     searchProPlugin({
       indexContent: true,
       autoSuggestions: true,
@@ -30,13 +32,13 @@ export default defineUserConfig ({
       searchDelay: 150,
       sortStrategy: "max",
     }),
-    //https://v2.vuepress.vuejs.org/reference/plugin/register-components.html
+    // https://v2.vuepress.vuejs.org/reference/plugin/register-components.html
     registerComponentsPlugin({ 
       componentsDir: path.resolve(__dirname, './components/'),
     }),
-    //https://plugin-copy-code2.vuejs.press/
+    // https://plugin-copy-code2.vuejs.press/
     copyCodePlugin({}),
-    //https://plugin-md-enhance.vuejs.press/guide/
+    // https://plugin-md-enhance.vuejs.press/guide/
     mdEnhancePlugin({
       tasklist: true,
       mermaid: true,
@@ -45,3 +47,4 @@ export default defineUserConfig ({
     }),
   ],
 });
+

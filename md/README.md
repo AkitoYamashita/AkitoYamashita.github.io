@@ -4,6 +4,8 @@ sidebar: false
 
 # Index
 
+<img src="https://github.com/AkitoYamashita.png" width="50">
+
 - [Profile](./profile.md)
 - [Source](./src/)
 - Log

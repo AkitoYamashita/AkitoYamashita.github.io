@@ -30,7 +30,7 @@ link: # recreate symbolic link
 	## for src markdown pages
 	rm -f ./md/src && ln -s ./../src ./md/src 
 dev:link # dev mode server
-	./node_modules/vuepress/bin/vuepress.js dev md --debug --config ./md/.vuepress/config.ts
+	./node_modules/vuepress/bin/vuepress.js dev md --debug
 serve:link # release mode server
 	./node_modules/vuepress/bin/vuepress.js dev md --host 0.0.0.0 --no-watch --clean-cache --clean-temp 
 build:clean link # release build

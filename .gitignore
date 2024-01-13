@@ -2,6 +2,9 @@
 /f/io/*
 !/f/io/.gitkeep
 
+## Extra
+mo
+
 ## VuePress Extend
 /docs
 /md/.vuepress/public/src

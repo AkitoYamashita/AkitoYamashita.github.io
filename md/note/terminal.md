@@ -10,7 +10,6 @@
 * シンボリックリンクの向き先変更=>`ln -nfs TARGET .`
 * ワンライナーで設定書き換え=>`sed -i -e "s/^upload_max_filesize = 2M$/upload_max_filesize = 500M/g" /etc/php.ini`
 * CURLでファイルダウンロードと権限付与=>`curl -sSLO https://path/to/f.sh && chmod +x f.sh`
-  * Moをワンライナーで準備=>`[ ! -e "$(dirname "$(readlink -f "${BASH_SOURCE:-0}")")/mo" ] && curl -sSLO https://raw.githubusercontent.com/tests-always-included/mo/master/mo && chmod 744 mo`
 * DOSやWSLを見やすくする=>[ColorTool](https://qiita.com/ysk_n/items/21d9e3fb8b8f22ab3476)
 * Finder設定(隠しファイルの表示)=>`defaults write com.apple.finder AppleShowAllFiles true && killall Finder`
 * ファイルバックアップ=>`cp -f file.txt file.txt.org`
@@ -60,4 +59,11 @@ then
         eval "$(anyenv init -)"
     fi
 fi
+```
+
+## Mustache(Bash)の[Mo](https://github.com/tests-always-included/mo)導入
+
+```bash
+[ ! -e "./mo" ] && curl -sSLO https://raw.githubusercontent.com/tests-always-included/mo/master/mo && chmod 744 "./mo"
+echo '{{NAME}}:["{{MSG}}"]' >> tmp.mo && NAME=MO MSG=Hello,Mo! ./mo tmp.mo && rm -f ./tmp.mo
 ```
