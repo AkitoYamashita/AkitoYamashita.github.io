@@ -19,19 +19,20 @@ base: # base path
 	@echo ${BASE}
 guide: # open guide page by WSL
 	/mnt/c/Windows/explorer.exe https://v2.vuepress.vuejs.org/guide/
-clean:
+clean: # cache delete
 	rm -rf ./node_modules && npm ci
-link:
+	rm -rf ./docs
+config: # edit VuePress config file
+	vim ./md/.vuepress/config.ts
+link: # recreate symbolic link
 	## for public static files
 	rm -f ./md/.vuepress/public/src && ln -s ./../../../src ./md/.vuepress/public/src
 	## for src markdown pages
 	rm -f ./md/src && ln -s ./../src ./md/src 
+dev:link # dev mode server
+	./node_modules/vuepress/bin/vuepress.js dev md --debug --config ./md/.vuepress/config.ts
+serve:link # release mode server
+	./node_modules/vuepress/bin/vuepress.js dev md --host 0.0.0.0 --no-watch --clean-cache --clean-temp 
 build:clean link # release build
 	./node_modules/vuepress/bin/vuepress.js build md --clean-cache --clean-temp 
 workflows:build # call by github action
-config:
-	vim ./md/.vuepress/config.ts
-dev:link
-	./node_modules/vuepress/bin/vuepress.js dev md --debug --config ./md/.vuepress/config.ts
-serve:link
-	./node_modules/vuepress/bin/vuepress.js dev md --host 0.0.0.0 --no-watch --clean-cache --clean-temp 
