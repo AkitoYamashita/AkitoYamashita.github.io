@@ -1,6 +1,6 @@
-# Bash
+# Terminal
 
-## 逆引きTIPS
+## TIPS
 
 * コマンドの強制終了=>`ctrl+c`
 * ターミナルの表示リセット=>`ctrl+l`
@@ -118,4 +118,66 @@ fi
 ```bash
 [ ! -e "./mo" ] && curl -sSLO https://raw.githubusercontent.com/tests-always-included/mo/master/mo && chmod 744 "./mo"
 echo '{{NAME}}:["{{MSG}}"]' >> tmp.mo && NAME=MO MSG=Hello,Mo! ./mo tmp.mo && rm -f ./tmp.mo
+```
+
+## tmux
+
+```bash
+#!/usr/bin/env bash
+#tmux2
+function tmux2() {
+  if [[ -z "$TMUX" && -z "$STY" ]] && type tmux >/dev/null 2>&1; then
+    tmux new-session -s s1 -n w1\; \
+      split-window -t w1.0 -v\; \
+      resize-pane -t w1.0 -U 99\; \
+      resize-pane -t w1.0 -D 4\; \
+      send-keys -t w1.0 "watch -n 2 free -m" C-m \; \
+      send-keys -t w1.1 "clear" C-m \; \
+      select-pane -t w1.1 \;\
+      &> /dev/null
+  fi
+}
+tmux2 "$@"
+```
+
+```bash
+#!/usr/bin/env bash
+#tmux3
+function tmux3() {
+  if [[ -z "$TMUX" && -z "$STY" ]] && type tmux >/dev/null 2>&1; then
+    tmux new-session -s s1 -n w1\; \
+      split-window -t w1.0 -v\; \
+      split-window -t w1.0 -h\; \
+      resize-pane -t w1.0 -U 99\; \
+      resize-pane -t w1.0 -D 6\; \
+      send-keys -t w1.0 "clear" C-m \; \
+      send-keys -t w1.1 "clear" C-m \; \
+      send-keys -t w1.2 "clear" C-m \; \
+      select-pane -t w1.2 \;\
+      &> /dev/null
+  fi
+}
+tmux3 "$@"
+```
+
+```bash
+#!/usr/bin/env bash
+# tmux4
+function tmux4() {
+  if [[ -z "$TMUX" && -z "$STY" ]] && type tmux >/dev/null 2>&1; then
+    tmux new-session -s s1 -n w1\; \
+      split-window -t w1.0 -v\; \
+      split-window -t w1.0 -h\; \
+      split-window -t w1.2 -h\; \
+      resize-pane -t w1.0 -U 99\; \
+      resize-pane -t w1.0 -D 6\; \
+      send-keys -t w1.0 "clear" C-m \; \
+      send-keys -t w1.1 "clear" C-m \; \
+      send-keys -t w1.2 "clear" C-m \; \
+      send-keys -t w1.3 "clear" C-m \; \
+      select-pane -t w1.0 \;\
+      &> /dev/null
+  fi
+}
+tmux4 "$@"
 ```
