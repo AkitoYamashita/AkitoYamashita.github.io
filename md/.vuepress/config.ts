@@ -16,7 +16,8 @@ export default defineUserConfig ({
   description: "備忘録",
   dest: "docs/",
   base: "/",
-  // base: "/note/",
+  //public: path.resolve(__dirname, './public/'),
+  // public: path.resolve(__dirname, './../../src/'),
   plugins: [
     //https://v2.vuepress.vuejs.org/reference/plugin/external-link-icon.html
     externalLinkIconPlugin({}),
@@ -30,7 +31,9 @@ export default defineUserConfig ({
       sortStrategy: "max",
     }),
     //https://v2.vuepress.vuejs.org/reference/plugin/register-components.html
-    registerComponentsPlugin({ componentsDir: path.resolve(__dirname, './components/') }),
+    registerComponentsPlugin({ 
+      componentsDir: path.resolve(__dirname, './components/'),
+    }),
     //https://plugin-copy-code2.vuejs.press/
     copyCodePlugin({}),
     //https://plugin-md-enhance.vuejs.press/guide/

@@ -22,11 +22,11 @@ guide: # open guide page by WSL
 clean:
 	rm -rf ./node_modules && npm ci
 link:
-	rm -f ./md/.vuepress/public/src
-	ln -s ../../../f/src ./md/.vuepress/public/src 
-	rm -f ./md/src
-	ln -s ../f/src ./md/src 
-build:clean link
+	## for public static files
+	rm -f ./md/.vuepress/public/src && ln -s ./../../../src ./md/.vuepress/public/src
+	## for src markdown pages
+	rm -f ./md/src && ln -s ./../src ./md/src 
+build:clean link # release build
 	./node_modules/vuepress/bin/vuepress.js build md --clean-cache --clean-temp 
 workflows:build # call by github action
 config:
