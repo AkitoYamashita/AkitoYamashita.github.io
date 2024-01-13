@@ -12,6 +12,8 @@
 * CURLでファイルダウンロードと権限付与=>`curl -sSLO https://path/to/f.sh && chmod +x f.sh`
   * Moをワンライナーで準備=>`[ ! -e "$(dirname "$(readlink -f "${BASH_SOURCE:-0}")")/mo" ] && curl -sSLO https://raw.githubusercontent.com/tests-always-included/mo/master/mo && chmod 744 mo`
 * DOSやWSLを見やすくする=>[ColorTool](https://qiita.com/ysk_n/items/21d9e3fb8b8f22ab3476)
+* Finder設定(隠しファイルの表示)=>`defaults write com.apple.finder AppleShowAllFiles true && killall Finder`
+* ファイルバックアップ=>`cp -f file.txt file.txt.org`
 
 ## Makefileテンプレート
 

@@ -3,6 +3,7 @@
 ## Reference
 
 * [PHP](https://www.php.net/docs.php)
+* info=>`echo "<?php phpinfo();" >> info.php`
 
 ### HelloWorld
 
