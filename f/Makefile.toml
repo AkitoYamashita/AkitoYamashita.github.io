@@ -1,0 +1,27 @@
+
+#Makefile.toml
+
+[config]
+skip_core_tasks = true
+
+[tasks.bash]
+script = [
+'''
+#!/usr/bin/env bash
+echo "Hello, World!"
+echo "args:"
+echo "->@:${@}"
+echo "->\$0:$0"
+echo "->\$1:$1"
+echo "->\$2:$2"
+echo "->\$3:$3"
+'''
+]
+
+[tasks.python]
+script = [
+'''
+#!/usr/bin/env python3
+print("Hello, World!")
+'''
+]

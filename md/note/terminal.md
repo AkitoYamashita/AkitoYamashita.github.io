@@ -47,6 +47,45 @@ gip: # global ip
   curl ifconfig.io
 ```
 
+## cargo-make(Makfile.toml)テンプレート
+
+```toml
+#Makefile.toml
+
+[config]
+skip_core_tasks = true
+
+[tasks.bash]
+script = [
+'''
+#!/usr/bin/env bash
+echo "Hello, World!"
+echo "args:"
+echo "->@:${@}"
+echo "->\$0:$0"
+echo "->\$1:$1"
+echo "->\$2:$2"
+echo "->\$3:$3"
+'''
+]
+
+[tasks.python]
+script = [
+'''
+#!/usr/bin/env python3
+print("Hello, World!")
+'''
+]
+```
+
+```bash
+# 導入ワンライナー
+CARGO_MAKE="0.37.6" && curl -sSLO https://github.com/sagiegurari/cargo-make/releases/download/0.37.6/cargo-make-v${CARGO_MAKE}-x86_64-unknown-linux-musl.zip && unzip cargo-make-v${CARGO_MAKE}-x86_64-unknown-linux-musl.zip && sudo cp -f cargo-make-v${CARGO_MAKE}-x86_64-unknown-linux-musl/cargo-make /usr/local/bin/ && rm -Rf cargo-make-v${CARGO_MAKE}-x86_64-unknown-linux-musl && rm -f cargo-make-v${CARGO_MAKE}-x86_64-unknown-linux-musl.zip && cargo-make --version
+# 実行(`--option`のようなオプションは`cargo-make`自体のオプションと解釈されるので`--`を挟むことに注意)
+makers bash -- --ARG1 --ARG2
+makers python
+```
+
 ## Anyenv導入
 
 ```bash
