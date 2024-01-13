@@ -14,6 +14,19 @@
 * Finder設定(隠しファイルの表示)=>`defaults write com.apple.finder AppleShowAllFiles true && killall Finder`
 * ファイルバックアップ=>`cp -f file.txt file.txt.org`
 
+## Bashテンプレート
+
+```bash
+#!/usr/bin/env bash
+#!/bin/bash
+BASE="$(dirname "$(readlink -f "${BASH_SOURCE:-0}")")"
+DIRNAME="$(cd "$(dirname "${BASH_SOURCE:-0}")"; pwd)"
+FILENAME="$(basename "${BASH_SOURCE:-0}")"
+DATEID=$(date +%Y%m%d%H%M%S)
+[ -e $BASE/_.sh ] && source $BASE/_.sh
+cd $BASE
+```
+
 ## Makefileテンプレート
 
 ```Makefile

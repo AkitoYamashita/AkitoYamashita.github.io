@@ -1,6 +1,8 @@
 # JavaScript
 
-## json-server
+## Nodejs
+
+### json-server
 
 1. `npm install json-server --save-dev`
 2. `vim db.json`
@@ -21,7 +23,7 @@
 
 3. `json-server --watch db.json`
 
-## LambdaからBASIC認証付きのHTTPSアクセス
+### LambdaからBASIC認証付きのHTTPSアクセス
 
 ```js
 var https = require('https');
@@ -41,7 +43,7 @@ exports.handler = function(event, context){
 }
 ```
 
-## LambdaからSNS経由でメール送信
+### LambdaからSNS経由でメール送信
 
 ```js
 var aws = require('aws-sdk');
@@ -73,7 +75,7 @@ exports.handler = (event, context, callback) => {
 };
 ```
 
-## LambdaからSNS経由でSlack通知
+### LambdaからSNS経由でSlack通知
 
 ```js
 const https = require('https');
@@ -104,7 +106,7 @@ exports.handler = function(event, context) {
 };
 ```
 
-## LambdaからSNS経由でChatwork通知
+### LambdaからSNS経由でChatwork通知
 
 ```js
 var https = require('https');
@@ -158,7 +160,7 @@ exports.handler = function(event, context) {
 };
 ```
 
-## JWT認証サーバ
+### JWT認証サーバ
 
 ```js
 ////Require
@@ -209,4 +211,155 @@ const auth = (req, res, next) => {
 app.get('/jwt/test', auth, (req, res) => {
   res.send(200, `user is ${req.decoded.user}!`);
 });
+```
+
+### Helper
+
+```jsx
+//helper.jsx
+export default class Helper {
+  constructor(args = undefined) {
+    console.log('HelperVersion:' + this.version() + '\n' + '@' + this.utc8601())
+  }
+  ////
+  version() {
+    return '20201130';
+  }
+  ////UTILS
+  epochid() {
+    return Date.now();
+  }
+  utc8601() {
+    return new Date().toISOString();
+  }
+  delay(func, interval = 1000) {
+    setTimeout(func, interval);
+  }
+  cron(func, interval = 1000) {
+    setInterval(func, interval);
+  }
+  ////JSON
+  jo2str(jo, option = undefined) {
+    try {
+      if (option === undefined) {
+        return JSON.stringify(jo);
+      } else {
+        return JSON.stringify(jo, null, 4);
+      }
+    } catch (e) {
+      return undefined;
+    }
+  }
+  str2jo(str) {
+    try {
+      return JSON.parse(str);
+    } catch (e) {
+      return undefined;
+    }
+  }
+  ////Encode/Decode
+  decode(str) {
+    return (new TextDecoder).decode(new Uint8Array(str));
+  }
+  encode(str) {
+    return (new TextEncoder).encode(str);
+  }
+  ////Html
+  setTitle(content) {
+    document.title = content;
+  }
+  title(content) {
+    return '<title>' + content + '</title>';
+  }
+  refresh(interval = 1) {
+    return '<meta http-equiv="refresh" content="' + interval + ';">';
+  }
+  fieldset(legend, content) {
+    return '<fieldset>' + '<legend>' + legend + '</legend>' + content + '</fieldset>';
+  }
+  xmp(contents) {
+    return '<xmp>' + contents + '</xmp>';
+  }
+  middle_center(contents) {
+    return '<div style="display:table;width:100%;height:100%;"><div style="display:table-cell;height:100%;vertical-align:middle;text-align:center;">' + contents + '</div></div>'
+  }
+  ////EOL
+  get BR() {
+    return '<br/>';
+  }
+  get HR() {
+    return '<hr/>';
+  }
+  get FIRST() {
+    return '<!DOCTYPE html><html><head>';
+  }
+  get MIDDLE() {
+    return '</head><body>';
+  }
+  get LAST() {
+    return '</body></html>';
+  }
+}
+```
+
+```js
+//webpack.config.js
+const path = require('path');
+const webpack = require('webpack');
+module.exports = (env, argv) => {
+  const conf = {
+    devServer: {
+      disableHostCheck: true,
+      historyApiFallback: true,
+      //port: 8080,
+      port: 8081,
+      contentBase: __dirname + '/../static',
+    },
+    entry: './helper.jsx',
+    output: {
+      path: __dirname + '/',
+      publicPath: '/',
+      filename: `helper.min.js`,
+      library: 'Helper',
+      libraryExport: 'default',
+      libraryTarget: 'umd',
+      globalObject: 'this', //for both browser and node.js
+      umdNamedDefine: true,
+    },
+    module: {
+      rules: [
+        {
+          test: /\.jsx?$/,
+          exclude: /(node_modules|bower_components)/,
+          use: [
+            {
+              loader: 'babel-loader',
+            }
+          ],
+        },
+      ],
+    },
+    resolve: {
+      alias: {},
+      extensions: ['.js', '.jsx'],
+    },
+    plugins: [
+    ],
+  };
+  return conf;
+};
+```
+
+```Makefile
+clean:
+  rm -rf node_modules
+  rm -f package.json package-lock.json
+init:
+  npm init -y
+  npm install -g webpack@4.44.2 webpack-cli
+  npm install --save-dev webpack@4.44.2 webpack-cli webpack-dev-server terser-webpack-plugin @babel/core @babel/preset-env babel-loader
+watch:
+  ./node_modules/webpack-cli/bin/cli.js --watch
+build:
+  ./node_modules/webpack/bin/webpack.js --config webpack.config.js --mode production
 ```
