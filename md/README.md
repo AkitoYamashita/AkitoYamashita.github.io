@@ -20,7 +20,9 @@ sidebar: false
   - [PHP](./note/php.md)
   - [Unity](./note/unity.md)
   - [Dart](./note/dart.md)
+  - [Golang](./note/golang.md)
   - [Python](./note/python.md)
+  - [Docker](./note/docker.md)
   - [Windows](./note/windows.md)
   - Site
     - [VuePressV2](./note/vuepress.md)

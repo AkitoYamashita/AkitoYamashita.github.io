@@ -122,6 +122,8 @@ echo '{{NAME}}:["{{MSG}}"]' >> tmp.mo && NAME=MO MSG=Hello,Mo! ./mo tmp.mo && rm
 
 ## tmux
 
+* プロセスキル=>`tmux kill-server`
+
 ```bash
 #!/usr/bin/env bash
 #tmux2

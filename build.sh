@@ -29,7 +29,7 @@ fi
 
 echo "-> STEP2 SEARCH"
 TARGET="$BASE"
-OUTPUT_FILE="f.sh"
+OUTPUT_FILE="packaged.sh"
 OUTPUT="${TARGET}/${OUTPUT_FILE}"
 LIST=()
 ITEMS=()
