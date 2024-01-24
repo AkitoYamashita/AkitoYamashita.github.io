@@ -23,6 +23,7 @@ sidebar: false
   - [Golang](./note/golang.md)
   - [Python](./note/python.md)
   - [Docker](./note/docker.md)
+  - [VSCode](./note/vscode.md)
   - [Windows](./note/windows.md)
   - Site
     - [VuePressV2](./note/vuepress.md)
