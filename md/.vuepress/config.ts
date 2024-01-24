@@ -11,7 +11,7 @@ import { copyCodePlugin } from "vuepress-plugin-copy-code2";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 //https://v2.vuepress.vuejs.org/guide/
-export default defineUserConfig ({
+export default {
   lang: 'ja-JP',
   title: "AkitoYamashita.github.io",
   description: "備忘録",
@@ -19,7 +19,14 @@ export default defineUserConfig ({
   base: "/",
   public: path.resolve(__dirname, './public/'),
   bundler: viteBundler(),
-  theme: defaultTheme(),
+  theme: defaultTheme({
+    navbar: [
+      {
+        text: 'Github',
+        link: 'https://github.com/AkitoYamashita/AkitoYamashita.github.io',
+      },
+    ],
+  }),
   plugins: [
     // https://v2.vuepress.vuejs.org/reference/plugin/external-link-icon.html
     externalLinkIconPlugin({}),
@@ -46,5 +53,5 @@ export default defineUserConfig ({
       include: true,
     }),
   ],
-});
+};
 
