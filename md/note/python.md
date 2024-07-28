@@ -30,6 +30,35 @@ with socketserver.TCPServer(("", PORT), handler_object) as httpd:
     httpd.serve_forever()
 ```
 
+表示サンプル
+
+```
+HTTP Headers
+X-Forwarded-For: xxx.xxx.xxx.xxx
+X-Forwarded-Proto: https
+X-Forwarded-Port: 443
+X-Amzn-Mtls-Clientcert-Serial-Number: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+X-Amzn-Mtls-Clientcert-Issuer: CN=xxxx.xxx
+X-Amzn-Mtls-Clientcert-Subject: CN=xxxx.xxxx.xxx
+X-Amzn-Mtls-Clientcert-Validity: NotBefore=2024-07-28T15:02:45Z;NotAfter=2025-08-27T16:02:45Z
+X-Amzn-Mtls-Clientcert-Leaf: -----BEGIN%20CERTIFICATE-----%0AXXXCCCCCCCCCCCCCCCCCCCXX%0A-----END%20CERTIFICATE-----%0A
+Host: client.bluhh.com
+X-Amzn-Trace-Id: Root=1-66a6874b-238c46c22a125acd0e5ee785
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:127.0) Gecko/20100101 Firefox/127.0
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+accept-language: ja,en-US;q=0.7,en;q=0.3
+accept-encoding: gzip, deflate, br, zstd
+dnt: 1
+sec-gpc: 1
+upgrade-insecure-requests: 1
+sec-fetch-dest: document
+sec-fetch-mode: navigate
+sec-fetch-site: none
+sec-fetch-user: ?1
+priority: u=1
+```
+
+
 ## LamndaでAWS Systems Managerのパラメータストア更新
 
 ```python
