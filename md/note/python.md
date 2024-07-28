@@ -1,5 +1,12 @@
 # Python
 
+## Pythonで簡易WebServer
+```python
+python -m http.server 8000
+//python2.7
+//python -m SimpleHTTPServer 8000
+```
+
 ## LamndaでAWS Systems Managerのパラメータストア更新
 
 ```python
