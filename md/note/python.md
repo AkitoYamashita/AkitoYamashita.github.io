@@ -1,11 +1,33 @@
 # Python
 
-## Pythonで簡易WebServer
+## 簡易WebServer
 
 ```python
 python -m http.server 8000
 ##python2.7
 #python -m SimpleHTTPServer 8000
+```
+
+## リクエストヘッダー出力
+
+```python
+import http.server
+import socketserver
+
+class MyHttpRequestHandler(http.server.SimpleHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header("Content-type", "text/html")
+        self.end_headers()
+        # Display HTTP request headers
+        headers = str(self.headers).replace("\n", "<br>")
+        self.wfile.write(bytes(f"<html><body><h1>HTTP Headers</h1><p>{headers}</p></body></html>", "utf8"))
+
+handler_object = MyHttpRequestHandler
+PORT = 80
+with socketserver.TCPServer(("", PORT), handler_object) as httpd:
+    print("serving at port", PORT)
+    httpd.serve_forever()
 ```
 
 ## LamndaでAWS Systems Managerのパラメータストア更新
