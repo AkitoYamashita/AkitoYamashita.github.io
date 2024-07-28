@@ -42,7 +42,7 @@ X-Amzn-Mtls-Clientcert-Issuer: CN=xxxx.xxx
 X-Amzn-Mtls-Clientcert-Subject: CN=xxxx.xxxx.xxx
 X-Amzn-Mtls-Clientcert-Validity: NotBefore=2024-07-28T15:02:45Z;NotAfter=2025-08-27T16:02:45Z
 X-Amzn-Mtls-Clientcert-Leaf: -----BEGIN%20CERTIFICATE-----%0AXXXCCCCCCCCCCCCCCCCCCCXX%0A-----END%20CERTIFICATE-----%0A
-Host: client.bluhh.com
+Host: xxxxx.xxxx.xxx
 X-Amzn-Trace-Id: Root=1-66a6874b-238c46c22a125acd0e5ee785
 user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:127.0) Gecko/20100101 Firefox/127.0
 accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
