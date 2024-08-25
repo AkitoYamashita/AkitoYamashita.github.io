@@ -13,6 +13,9 @@ sidebar: false
   - [FlutterでInstantAppsを作ってリリースしたときのログ](./log/instatapp.md)
 - Note
   - [Terminal](./note/terminal.md)
+  - [Linux](./note/linux.md)
+  - [Mac](./note/mac.md)
+  - [Windows](./note/windows.md)
   - [Markdown](./note/markdown.md)
   - [Git](./note/git.md)
   - [HTML](./note/html.md)
@@ -24,7 +27,6 @@ sidebar: false
   - [Python](./note/python.md)
   - [Docker](./note/docker.md)
   - [VSCode](./note/vscode.md)
-  - [Windows](./note/windows.md)
   - Site
     - [VuePressV2](./note/vuepress.md)
     - [mdBook](./note/mdbook.md)
