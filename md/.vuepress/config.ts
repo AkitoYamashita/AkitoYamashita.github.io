@@ -9,6 +9,7 @@ import { externalLinkIconPlugin } from '@vuepress/plugin-external-link-icon'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { copyCodePlugin } from "vuepress-plugin-copy-code2";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+import googleAnalyticsPlugin from '@vuepress/plugin-google-analytics';
 
 //https://v2.vuepress.vuejs.org/guide/
 export default {
@@ -51,6 +52,10 @@ export default {
       mermaid: true,
       demo: true,
       include: true,
+    }),
+    // https://ecosystem.vuejs.press/plugins/analytics/google-analytics.html
+    googleAnalyticsPlugin({
+      id: 'G-27XRJCNG7Y',
     }),
   ],
 };

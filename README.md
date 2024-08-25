@@ -5,3 +5,10 @@
 ## VuePressV2
 
 [workflow-action(vuepress)](./.github/workflows/vuepress.yml)
+
+## Environment
+
+- github.io
+  - node: 20
+- nodenv
+  - node: 20.17.0
