@@ -18,6 +18,24 @@ Resources:
   ## Get:`aws dynamodb scan --table-name tbl --profile dynamodb-full --region ap-northeast-1`
   ## Put:`aws dynamodb put-item --table-name tbl --item '{ "id": { "N": "1" }, "msg": { "S": "Message" } }' --profile dynamodb-full --region ap-northeast-1`
   ## Del:`aws dynamodb delete-item --table-name tbl --key '{ "id": { "N": "1" }, "msg": { "S": "Message" } }' --profile dynamodb-full --region ap-northeast-1`
+  ## 一括削除のためのコマンドはないため、delete-itemでループ処理するかテーブルを作り直す方が早い
+
+  ## ポリシー更新できなくならないよう一部アクション以外をすべて拒否するリソースポリシー
+  ## {
+  ## 	"Version": "2012-10-17",
+  ## 	"Statement": [
+  ## 		{
+  ## 			"Effect": "Deny",
+  ## 			"Principal": "*",
+  ## 			"NotAction": [
+  ## 				"dynamodb:*ResourcePolicy",
+  ## 				"dynamodb:List*",
+  ## 				"dynamodb:Describe*"
+  ## 			],
+  ## 			"Resource": "arn:aws:dynamodb:ap-northeast-1:XXXXXXXXXX:table/XXXXXXXXXXXXX"
+  ## 		}
+  ## 	]
+  ## }
 
   # DynamoDB
   DynamoDB:
