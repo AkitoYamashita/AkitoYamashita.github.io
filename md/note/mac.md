@@ -8,6 +8,12 @@
 - Xcode
 - XcodeAdditionaltool
 - fvm
+```sh
+  brew tap dart-lang/dart
+  brew install dart
+  dart pub global activate fvm
+  fvm install list
+```
 - anyenv
   - nodenv
   - pyenv
