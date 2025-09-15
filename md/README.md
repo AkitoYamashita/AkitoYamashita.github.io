@@ -9,8 +9,9 @@ sidebar: false
 - [Profile](./profile.md)
 - [Source](./src/)
 - Log
-  - [EC2だけでiOSアプリをリリースしたときのログ](./log/ec2mac.md)
-  - [FlutterでInstantAppsを作ってリリースしたときのログ](./log/instatapp.md)
+  - [アーキテクチャー検討](./log/20250915_architecture.md)
+  - [EC2だけでiOSアプリをリリース](./log/20231223_ec2mac.md)
+  - [FlutterでInstantAppsを作ってリリース](./log/20240109_instatapp.md)
 - Note
   - [Terminal](./note/terminal.md)
   - [Linux](./note/linux.md)
@@ -20,6 +21,7 @@ sidebar: false
   - [Git](./note/git.md)
   - [HTML](./note/html.md)
   - [Javascript](./note/javascript.md)
+    - [VuePressV2](./note/vuepress.md)
   - [PHP](./note/php.md)
   - [Unity](./note/unity.md)
   - [Dart](./note/dart.md)
@@ -27,11 +29,7 @@ sidebar: false
   - [Python](./note/python.md)
   - [Docker](./note/docker.md)
   - [VSCode](./note/vscode.md)
-  - Site
-    - [VuePressV2](./note/vuepress.md)
-    - [mdBook](./note/mdbook.md)
-    - [Rocket](./note/rocket.md)
-  - AWS
+  - [AWS](./note/aws/index.md)
     - [CloudFormation](./note/aws/cfn/index.md)
       - [S3](./note/aws/cfn/s3.md)
       - [CodePipeline](./note/aws/cfn/pipeline.md)
@@ -39,3 +37,6 @@ sidebar: false
       - [CodeCommit](./note/aws/cfn/codecommit.md)
       - [DynamoDB](./note/aws/cfn/dynamodb.md)
       - [IAM Role(Policy)](./note/aws/cfn/role-policy.md)
+  - Archive
+    - [Rust - mdBook](./note/archive/mdbook.md)
+    - [Rust - Rocket](./note/archive/rocket.md)
