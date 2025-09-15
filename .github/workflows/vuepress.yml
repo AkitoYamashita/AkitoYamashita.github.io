@@ -5,6 +5,7 @@ on:
   pull_request:
     branches: [ "master" ]
   workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-24.04
@@ -13,15 +14,12 @@ jobs:
         with:
           timezoneLinux: "Asia/Tokyo"
 
-      - name: Run a one-line script
-        run: |
-          mkdir docs
+      - run: |
+          mkdir -p docs
           date > docs/.gitkeep
 
       - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
@@ -35,21 +33,20 @@ jobs:
           key: npm-${{ hashFiles('package-lock.json') }}
           restore-keys: npm-
 
-      - name: workflows
-        run: make workflows
+      - run: make workflows
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: my_site
           path: docs
 
-      - uses: actions/upload-pages-artifact@v1
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: docs
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -57,5 +54,5 @@ jobs:
       pages: write
       id-token: write
     steps:
-      - uses: actions/deploy-pages@v1
-        id: deployment
+      - id: deployment
+        uses: actions/deploy-pages@v4
