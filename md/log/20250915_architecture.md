@@ -89,3 +89,83 @@
 5. 拡張
    - gRPC/WebSocket対応（ゲーム・チャット）
    - サーバレス利用（Firestore/DynamoDB）でWebサービスを低コスト運用
+
+## 図
+
+```mermaid
+flowchart TD
+
+subgraph Client["🖥 クライアント (Flutter)"]
+  A1["デスクトップ\n(Win/Mac/Linux)"]
+  A2["モバイル\n(iOS/Android)"]
+  A3["Webブラウザ"]
+end
+
+subgraph Backend["⚙️ バックエンド (Go)"]
+  B1["CUIモード\n(app task ...)"]
+  B2["Webサーバモード\n(app serve)\nREST/gRPC API + Web UI"]
+end
+
+subgraph DB["🗂 データベース"]
+  C1["SQLite\n(ローカル開発)"]
+  C2["PlanetScale (MySQL)\nSupabase (Postgres)"]
+  C3["Firestore / DynamoDB\n(NoSQL)"]
+end
+
+subgraph Deploy["🚀 配置形態"]
+  D1["ローカルPC\n(Mac/Linux, CUI)"]
+  D2["VPS/クラウド\n(Docker / Compose)"]
+  D3["パブリックアクセス\n(HTTPS, Basic認証)"]
+  D4["プライベート利用\n(ローカルWebUI)"]
+end
+
+A1 -->|gRPC/REST| B2
+A2 -->|gRPC/REST| B2
+A3 -->|gRPC/REST| B2
+
+B1 -->|CRUD処理| DB
+B2 -->|CRUD処理| DB
+
+Backend --> Deploy
+DB --> Deploy
+```
+
+## ロードマップ
+
+```mermaid
+flowchart LR
+
+subgraph Step1["Step 1: 最小構成"]
+  S1A["Goサーバ (app serve)\n+ SQLite"]
+  S1B["Web UI (Basic認証付き)"]
+end
+
+subgraph Step2["Step 2: Flutter UI追加"]
+  S2A["Flutterデスクトップ/モバイル"]
+  S2B["Goサーバ REST/gRPC API"]
+end
+
+subgraph Step3["Step 3: DB切替対応"]
+  S3A["PlanetScale (MySQL)"]
+  S3B["Supabase (Postgres)"]
+  S3C["Firestore / DynamoDB"]
+end
+
+subgraph Step4["Step 4: Docker化"]
+  S4A["Dockerfile"]
+  S4B["docker-compose\n(Postgres/Redis連携)"]
+end
+
+subgraph Step5["Step 5: 拡張"]
+  S5A["gRPC / WebSocket\n(チャット, ゲーム同期)"]
+  S5B["サーバレス (Firestore/DynamoDB)\n低コストWebサービス"]
+end
+
+S1A --> S1B
+S1B --> S2A
+S2A --> S2B
+S2B --> S3A & S3B & S3C
+S3A & S3B & S3C --> S4A
+S4A --> S4B
+S4B --> S5A & S5B
+```
