@@ -35,4 +35,8 @@ serve:link # release mode server
 	./node_modules/vuepress/bin/vuepress.js dev md --host 0.0.0.0 --no-watch --clean-cache --clean-temp 
 build:clean link # release build
 	./node_modules/vuepress/bin/vuepress.js build md --clean-cache --clean-temp 
-workflows:build # call by github action
+versioning:
+	echo "Build: $$(TZ='Asia/Tokyo' date '+%Y-%m-%d %H:%M:%S JST')" > md/.vuepress/public/version.txt
+version:
+	curl -s https://AkitoYamashita.github.io/version.txt
+workflows:versioning build # call by github action

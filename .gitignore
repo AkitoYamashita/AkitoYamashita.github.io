@@ -11,6 +11,7 @@ mo
 /docs
 /md/.vuepress/public/src
 /md/src
+/md/.vuepress/public/version.txt
 
 ## VuePress
 .temp
