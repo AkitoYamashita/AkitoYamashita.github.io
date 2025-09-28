@@ -38,5 +38,5 @@ build:clean link # release build
 versioning:
 	echo "Build: $$(TZ='Asia/Tokyo' date '+%Y-%m-%d %H:%M:%S JST')" > md/.vuepress/public/version.txt
 version:
-	curl -s https://AkitoYamashita.github.io/version.txt
+	@curl -s https://AkitoYamashita.github.io/version.txt
 workflows:versioning build # call by github action
