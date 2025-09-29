@@ -1,10 +1,8 @@
 !.gitkeep
 
-## F
-/f/io/*
-!/f/io/.gitkeep
-/f/tmp/*
-!/f/tmp/.gitkeep
+## tmp
+/tmp/**
+!/tmp/.gitkeep
 
 ## Extra
 mo
