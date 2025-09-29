@@ -11,9 +11,9 @@ mo
 
 ## VuePress Extend
 /.dist
-/md/.vuepress/public/src
-/md/src
-/md/.vuepress/public/version.txt
+/data/md/.vuepress/public/src
+/data/md/src
+/data/md/.vuepress/public/version.txt
 
 ## VuePress
 .temp

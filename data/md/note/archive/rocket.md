@@ -57,7 +57,6 @@ md/[name].htmlで[name].mdのマークダウンを変換して表示
 * jsonのシリアライズにserdeクレートを追加
 * ビューのテンプレートエンジンにHandlebarを利用
 
-
 `dependencies`を修正
 
 ```toml
