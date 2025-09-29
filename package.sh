@@ -29,7 +29,7 @@ fi
 
 echo "-> STEP2 SEARCH"
 TARGET="$BASE"
-OUTPUT_FILE="packaged.sh"
+OUTPUT_FILE="pkg.sh"
 OUTPUT="${TARGET}/${OUTPUT_FILE}"
 LIST=()
 ITEMS=()
@@ -37,18 +37,17 @@ echo "TARGET:$TARGET"
 echo "OUTPUT_FILE:$OUTPUT_FILE"
 echo "OUTPUT:$OUTPUT"
 FIND_RESULT=`
-\find ${TARGET} -type f \
-	-not -path "*.swp" \
- 	-and -not -path "*/.git/*" \
- 	-and -not -path "*/.ssh/known_hosts" \
- 	-and -not -path "*/vendor/*" \
- 	-and -not -path "*/node_modules/*" \
- 	-and -not -path "${TMP}/*" \
- 	-and -not -path "${OUTPUT}" \
- 	-and -not -path "${TARGET}/sandbox/*" \
- 	-or -path "${TARGET}/io/receiver.sh" \
- 	-or -path "${TARGET}/io/sender.sh" \
- 	-or -path "${TARGET}/sandbox/.gitkeep"
+find "${TARGET}" \( -type f \
+  -not -path "*/.DS_Store" \
+  -not -path "*.swp" \
+  -not -path "*/.git/*" \
+  -not -path "*/node_modules/*" \
+  -not -path "*/vendor/*" \
+  -not -path "*/.ssh/known_hosts" \
+  -not -path "${TMP}/*" \
+  -not -path "${OUTPUT}" \
+  -not -path "${TARGET}/f.png" \
+\) -or -path "${TARGET}/package.sh"
 `;
 for FILEPATH in $FIND_RESULT; do
   _D="$(dirname ${FILEPATH#$TARGET/})"
@@ -142,7 +141,7 @@ bash -c "cat << 'EOF' > $HTML
 <head>
 <meta charset="utf-8"></head>
 <body>
-<a href="f.sh">f.sh</a>
+<a href="pkg.sh">pkg.sh</a>
 <hr/>
 <code>
 EOF"

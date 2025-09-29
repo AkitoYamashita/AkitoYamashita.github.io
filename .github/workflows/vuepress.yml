@@ -15,8 +15,8 @@ jobs:
           timezoneLinux: "Asia/Tokyo"
 
       - run: |
-          mkdir -p docs
-          date > docs/.gitkeep
+          mkdir -p .dist
+          date > .dist/.gitkeep
 
       - name: Checkout
         uses: actions/checkout@v4

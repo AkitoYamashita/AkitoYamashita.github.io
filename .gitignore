@@ -10,7 +10,7 @@
 mo
 
 ## VuePress Extend
-/docs
+/.dist
 /md/.vuepress/public/src
 /md/src
 /md/.vuepress/public/version.txt
