@@ -15,8 +15,8 @@ jobs:
           timezoneLinux: "Asia/Tokyo"
 
       # - run: |
-      #     mkdir -p .dist
-      #     date > .dist/.gitkeep
+      #     mkdir -p tmp
+      #     date > ./tmp/.gitkeep
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,11 +38,11 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: my_site
-          path: .dist
+          path: tmp
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .dist
+          path: tmp
 
   deploy:
     needs: build

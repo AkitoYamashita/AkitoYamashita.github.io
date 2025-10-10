@@ -1,6 +1,6 @@
 !.gitkeep
 
-## tmp
+## Temporary files
 /tmp/**
 !/tmp/.gitkeep
 
@@ -8,7 +8,6 @@
 mo
 
 ## VuePress Extend
-/.dist
 /data/md/.vuepress/public/src
 /data/md/src
 /data/md/.vuepress/public/version.txt

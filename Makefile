@@ -21,7 +21,7 @@ guide: # open guide page by WSL
 	/mnt/c/Windows/explorer.exe https://v2.vuepress.vuejs.org/guide/
 clean: # cache delete
 	rm -rf ./node_modules && npm ci
-	rm -rf ./.dist
+	rm -rf ./tmp
 config: # edit VuePress config file
 	vim ./data/md/.vuepress/config.ts
 link: # recreate symbolic link
@@ -34,8 +34,8 @@ dev:link # dev mode server
 serve:link # release mode server
 	./node_modules/vuepress/bin/vuepress.js dev data/md --host 0.0.0.0 --no-watch --clean-cache --clean-temp 
 build:clean link # release build
-	mkdir -p .dist
-	date > .dist/.gitkeep
+	mkdir -p tmp
+	date > ./tmp/.gitkeep
 	./node_modules/vuepress/bin/vuepress.js build data/md --clean-cache --clean-temp 
 versioning:
 	echo "Build: $$(TZ='Asia/Tokyo' date '+%Y-%m-%d %H:%M:%S JST')" > data/md/.vuepress/public/version.txt
