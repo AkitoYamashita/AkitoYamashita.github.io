@@ -33,7 +33,7 @@ jobs:
           key: npm-${{ hashFiles('package-lock.json') }}
           restore-keys: npm-
 
-      - run: make workflows
+      - run: make workflow
 
       - uses: actions/upload-artifact@v4
         with:

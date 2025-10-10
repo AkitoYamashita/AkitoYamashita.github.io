@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev md",
-    "build": "vuepress build md"
+    "dev": "vuepress dev markdown_directory",
+    "build": "vuepress build markdown_directory"
   },
   "author": "",
   "license": "ISC",

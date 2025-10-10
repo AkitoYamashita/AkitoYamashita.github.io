@@ -4,7 +4,8 @@ sidebar: false
 
 # Index
 
-<img src="https://github.com/AkitoYamashita.png" width="50">
+<img src="https://github.com/AkitoYamashita.png" width="50" alt="Github Avator">
+<img src="https://akitoyamashita.github.io/favicon.png" width="50" alt="Favicon">
 
 - [Profile](./profile.md)
 - [Source](./src/)
