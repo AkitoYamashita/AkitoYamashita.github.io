@@ -1,5 +1,8 @@
 !.gitkeep
 
+## VSCode
+.vscode/settings.json
+
 ## VuePress Extend
 /x/md/.vuepress/public/src
 /x/md/src
