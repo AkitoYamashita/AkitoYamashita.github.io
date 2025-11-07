@@ -4,8 +4,18 @@ sidebar: false
 
 # Index
 
-<img src="https://github.com/AkitoYamashita.png" height="50" alt="Github Avator" style="border:1px solid grey;margin-right:5px;border-radius:5px;">
-<img src="https://akitoyamashita.github.io/favicon.png" height="50" alt="Favicon" style="border:1px solid grey;margin-right:5px;border-radius:5px;">
+<style>
+  img{
+    height: 50px;
+    border:1px solid grey;
+    margin-right:5px;
+    border-radius:5px;
+  }
+</style>
+
+<img src="https://github.com/AkitoYamashita.png" alt="Github Avator">
+<img src="https://akitoyamashita.github.io/favicon.png" alt="Favicon">
+<a href="chrome://dino"><img src="dino.svg" alt="Dino"></a>
 
 - [Profile](./profile.md)
 - [Source](./src/)
