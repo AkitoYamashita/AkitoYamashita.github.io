@@ -60,7 +60,7 @@ export default {
     ['script', {},`
       tailwind.config = {
         corePlugins: { preflight: false },
-        plugins: [tailwindTypography]
+        plugins: [tailwindTypography],
         theme: {
           extend: {}
         }
