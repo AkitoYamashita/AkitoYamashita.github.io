@@ -12,10 +12,9 @@ sidebar: false
     border-radius:5px;
   }
 </style>
-<a href="https://github.com/AkitoYamashita"><img src="https://github.com/AkitoYamashita.png" alt="Github Avator"></a>
-<a href="https://akitoyamashita.github.io"><img src="https://akitoyamashita.github.io/favicon.png" alt="Favicon"></a>
-<img src="dino.svg" alt="Dino">
-
+[![GitHub Avatar](https://github.com/AkitoYamashita.png)](https://github.com/AkitoYamashita)
+[![Favicon](https://akitoyamashita.github.io/favicon.png)](https://akitoyamashita.github.io)
+![Dino](https://akitoyamashita.github.io/dino.svg)
 
 - [Profile](./profile.md)
 - [Source](./src/)
