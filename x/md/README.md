@@ -4,17 +4,19 @@ sidebar: false
 
 # Index
 
-<style>
-  img{
-    height: 50px;
-    border:1px solid grey;
-    margin-right:5px;
-    border-radius:5px;
-  }
-</style>
+<div
+  class="prose
+         flex items-center gap-2
+         [&>p]:m-0
+         prose-img:h-[50px] prose-img:rounded-md prose-img:border prose-img:border-gray-400
+         prose-a:no-underline"
+>
+
 [![GitHub Avatar](https://github.com/AkitoYamashita.png)](https://github.com/AkitoYamashita)
 [![Favicon](https://akitoyamashita.github.io/favicon.png)](https://akitoyamashita.github.io)
 ![Dino](https://akitoyamashita.github.io/dino.svg)
+
+</div>
 
 - [Profile](./profile.md)
 - [Source](./src/)
