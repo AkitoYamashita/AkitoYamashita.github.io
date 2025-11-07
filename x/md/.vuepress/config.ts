@@ -59,13 +59,14 @@ export default {
     // TailwindCSS
     ['script', {},`
       tailwind.config = {
-        corePlugins: { preflight: false }
+        corePlugins: { preflight: false },
+        plugins: [tailwindTypography]
         theme: {
           extend: {}
         }
       }
     `],
-    ['script', { src: 'https://cdn.tailwindcss.com' }],
+    ['script', { src: 'https://cdn.tailwindcss.com?plugins=typography' }],
     // GA
     ['script', { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-27XRJCNG7Y' }],
     ['script', {}, ["window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-27XRJCNG7Y');"]],
