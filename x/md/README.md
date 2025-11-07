@@ -13,9 +13,9 @@ sidebar: false
   }
 </style>
 
-<img src="https://github.com/AkitoYamashita.png" alt="Github Avator">
-<img src="https://akitoyamashita.github.io/favicon.png" alt="Favicon">
-<a href="chrome://dino"><img src="dino.svg" alt="Dino"></a>
+[![GitHub Avatar](/AkitoYamashita.png)](https://github.com/AkitoYamashita)
+[![Favicon](/favicon.png)](https://akitoyamashita.github.io)
+[![Dino](/dino.svg)](chrome://dino)
 
 - [Profile](./profile.md)
 - [Source](./src/)
