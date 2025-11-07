@@ -54,16 +54,21 @@ export default {
     }),
   ],
   head: [
-    // Favicon
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
-    // GA
-    ['script', { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-27XRJCNG7Y' }],
-    ['script', {}, [
-      "window.dataLayer = window.dataLayer || [];",
-      "function gtag(){dataLayer.push(arguments);}",
-      "gtag('js', new Date());",
-      "gtag('config', 'G-27XRJCNG7Y');",
-    ].join('\n')],
+    [
+        'script',
+        {
+            async: true,
+            src: 'https://www.googletagmanager.com/gtag/js?id=G-27XRJCNG7Y',
+        },
+    ],
+    [
+        'script',
+        {},
+        [
+            "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-27XRJCNG7Y');",
+        ],
+    ],
   ],
 };
 
