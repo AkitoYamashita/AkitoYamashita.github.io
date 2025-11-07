@@ -4,17 +4,18 @@ sidebar: false
 
 # Index
 
-<div class="flex items-center gap-2">
-  <a href="https://github.com/AkitoYamashita" class="inline-block" title="GitHub">
-    <img src="https://github.com/AkitoYamashita.png" alt="GitHub Avatar" class="h-12 w-12 rounded-lg border border-gray-400 object-cover">
-  </a>
-  <a href="https://akitoyamashita.github.io" class="inline-block" title="Home">
-    <img src="https://akitoyamashita.github.io/favicon.png" alt="Favicon" class="h-12 w-12 rounded-lg border border-gray-400 object-cover">
-  </a>
-  <a href="chrome://dino" class="inline-block" title="Chrome Dino">
-    <img src="https://akitoyamashita.github.io/dino.svg" alt="Dino" class="h-12 w-12 rounded-lg border border-gray-400">
-  </a>
-</div>
+<style>
+  img{
+    height: 50px;
+    border:1px solid grey;
+    margin-right:5px;
+    border-radius:5px;
+  }
+</style>
+<a href="https://github.com/AkitoYamashita"><img src="https://github.com/AkitoYamashita.png" alt="Github Avator"></a>
+<a href="https://akitoyamashita.github.io"><img src="https://akitoyamashita.github.io/favicon.png" alt="Favicon"></a>
+<img src="dino.svg" alt="Dino">
+
 
 - [Profile](./profile.md)
 - [Source](./src/)
