@@ -56,18 +56,14 @@ export default {
   head: [
     // Favicon
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
-    // TailwindCSS
-    ['script', {},`
-      tailwind.config = {
-        theme: {
-          extend: {}
-        }
-      }
-    `],
-    ['script', { src: 'https://cdn.tailwindcss.com' }],
     // GA
     ['script', { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-27XRJCNG7Y' }],
-    ['script', {}, ["window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-27XRJCNG7Y');"]],
+    ['script', {}, [
+      "window.dataLayer = window.dataLayer || [];",
+      "function gtag(){dataLayer.push(arguments);}",
+      "gtag('js', new Date());",
+      "gtag('config', 'G-27XRJCNG7Y');",
+    ].join('\n')],
   ],
 };
 
