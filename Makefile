@@ -21,6 +21,8 @@ guide: # open guide page by WSL
 	/mnt/c/Windows/explorer.exe https://v2.vuepress.vuejs.org/guide/
 config: # edit VuePress config file
 	vim ./x/md/.vuepress/config.ts
+reset:
+	rm -rf ./node_modules ./package-lock.json && npm install
 clean: # cache delete
 	rm -rf ./node_modules && npm ci
 	rm -rf ./tmp
