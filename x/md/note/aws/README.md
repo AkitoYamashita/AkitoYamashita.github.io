@@ -1,3 +1,7 @@
+---
+sidebar: auto
+---
+
 # AWSでよく利用されるサービス上位50選
 
 ## EC2 (Elastic Compute Cloud)
