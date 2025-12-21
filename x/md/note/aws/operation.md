@@ -10,12 +10,14 @@
   - 共通アカウント(COM) → **全体運用専用**
     - IdC委任管理
     - IAMの一元化されたルートアクセス権限持ち
-  - Organizationの子アカウント1(XAS) → **ルート認証情報削除後、IdCユーザ運用**
+  - Organizationの子アカウント1(XAS)  
+     → **ルート認証情報削除後、IdCユーザ運用**
     - 既存アカウントでOrgnization下に招待
-  - Organizationの子アカウント2(SOU) → **ルート認証情報削除後、IdCユーザ運用**
+  - Organizationの子アカウント2(SOU)  
+     → **ルート認証情報削除後、IdCユーザ運用**
     - Orgnization内の子アカウントとして新規作成
 
-## Organizations親/管理アカウント(AKT)でやること（初期セットアップ用）
+## Organizations親/管理アカウント(AKT)でやること
 
 - MFA を有効化
 - root のアクセスキーを作成しない
@@ -32,6 +34,8 @@
 
 - SCP/OUの設計・設定
 - IdC(SSO) User/Group/PermissionSet設計・設定
+- Route53のドメイン登録・親DNS管理  
+   → サブドメインは以降の管理は子アカウントへの権限移譲で実現する
 
 ## アカウント作成時に共通で行うこと
 
