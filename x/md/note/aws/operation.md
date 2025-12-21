@@ -4,8 +4,6 @@
 
 - MFA を有効化
 - root のアクセスキーを作成しない
-- IAM ユーザー／ロールによる請求情報へのアクセスを有効化
-  - Account → Billing → IAM access to billing information
 - 最低限の Budget / コストアラートを設定
 
 ## Organizations 管理アカウントでやること（通常運用）
@@ -21,6 +19,8 @@
   - その後、Organizations管理アカウントでルート認証情報の削除
 - アカウントエイリアスを設定
 - SSO User/Group/PermissionSet作成
+- IAM ユーザー／ロールによる請求情報へのアクセスを有効化
+  - (AccountID) → IDBilling and Cost Management → 請求とコスト管理 → アカウント → IAM ユーザーおよびロールによる請求情報へのアクセス
 
 ## メモ（運用前提）
 
