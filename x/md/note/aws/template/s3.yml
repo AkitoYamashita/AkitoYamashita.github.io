@@ -1,0 +1,40 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Parameters:
+  S3BucketName:
+    Type: String
+    Default: bucket-abcdefghijklmnopqrstuvwxyz
+
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub ${S3BucketName}
+      PublicAccessBlockConfiguration:
+          BlockPublicAcls: false
+          BlockPublicPolicy: false
+          IgnorePublicAcls: false
+          RestrictPublicBuckets: false
+      WebsiteConfiguration: 
+        IndexDocument: index.html
+        ErrorDocument: error.html
+      Tags:
+        - Key: k
+          Value: v  
+      
+  S3BucketPolicy:
+    DependsOn: S3Bucket
+    Type: "AWS::S3::BucketPolicy"
+    Properties:
+      PolicyDocument:
+        Statement:
+          - Action:
+            - "s3:GetObject"
+            Effect: "Allow"
+            Resource: !Sub "arn:aws:s3:::${S3BucketName}/*"
+            Principal: "*"
+      Bucket: !Ref S3Bucket
+
+Outputs:
+  S3BucketName:
+    Value: !Ref S3Bucket
