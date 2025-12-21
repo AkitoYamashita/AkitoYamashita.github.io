@@ -1,0 +1,42 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: tag-policy-common (SYSTEM, ENV, STACK_NAME)
+
+Resources:
+  TagPolicyCommon:
+    Type: AWS::Organizations::Policy
+    Properties:
+      Name: tag-policy-common
+      Description: Common tag policy to normalize SYSTEM, ENV, STACK_NAME
+      Type: TAG_POLICY
+      Content: |
+        {
+          "tags": {
+            "SYSTEM": {
+              "tag_key": {
+                "@@assign": "SYSTEM"
+              }
+            },
+            "ENV": {
+              "tag_key": {
+                "@@assign": "ENV"
+              },
+              "tag_value": {
+                "@@assign": [
+                  "PRD",
+                  "STG",
+                  "DEV"
+                ]
+              }
+            },
+            "STACK_NAME": {
+              "tag_key": {
+                "@@assign": "STACK_NAME"
+              }
+            }
+          }
+        }
+
+Outputs:
+  TagPolicyId:
+    Description: Created Tag Policy ID (attach manually)
+    Value: !Ref TagPolicyCommon

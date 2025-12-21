@@ -1,0 +1,51 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Create and attach an SCP (Region restriction + Organizations full deny except AKT root)
+
+Parameters:
+  OrganizationsManagementAccountId:
+    Type: String
+    Description: AWS Organizations management account ID allowed to run organizations:* (root principal)
+
+Resources:
+  ScpCommonPolicy:
+    Type: AWS::Organizations::Policy
+    Properties:
+      Name: "scp-common"
+      Description: "Common Service Control Policy"
+      Type: SERVICE_CONTROL_POLICY
+      Content:
+        Version: "2012-10-17"
+        Statement:
+          - Sid: DenyAllRegionsExceptTokyoAndUsEast1ExceptGlobalServices
+            Effect: Deny
+            NotAction:
+              - "iam:*"
+              - "route53:*"
+              - "cloudfront:*"
+              - "waf:*"
+              - "wafv2:*"
+              - "shield:*"
+              - "support:*"
+              - "budgets:*"
+              - "ce:*"
+            Resource: "*"
+            Condition:
+              StringNotEquals:
+                aws:RequestedRegion:
+                  - "ap-northeast-1"
+                  - "us-east-1"
+
+          - Sid: DenyAllOrganizationsOpsExceptRootAccount
+            Effect: Deny
+            Action:
+              - "organizations:*"
+            Resource: "*"
+            Condition:
+              ArnNotLike:
+                aws:PrincipalArn:
+                  - !Sub "arn:aws:iam::${OrganizationsManagementAccountId}:root"
+
+Outputs:
+  ScpCommonPolicyId:
+    Description: Created SCP common policy ID
+    Value: !Ref ScpCommonPolicy

@@ -1,9 +1,17 @@
 AWSTemplateFormatVersion: '2010-09-09'
 
 Parameters:
+  SYSTEM:
+    Type: String
+  ENV:
+    Type: String
+    AllowedValues: 
+      - PRD
+      - STG
+      - DEV
   S3BucketName:
     Type: String
-    Default: bucket-abcdefghijklmnopqrstuvwxyz
+    Default: s3-com-prd-work-abcdefghijklmnopqrstuvwxyz
 
 Resources:
   S3Bucket:
@@ -19,8 +27,12 @@ Resources:
         IndexDocument: index.html
         ErrorDocument: error.html
       Tags:
-        - Key: k
-          Value: v  
+        - Key: SYSTEM
+          Value: !Sub ${SYSTEM}
+        - Key: ENV
+          Value: !Sub ${ENV}
+        - Key: STACK_NAME
+          Value: !Ref AWS::StackName
       
   S3BucketPolicy:
     DependsOn: S3Bucket
