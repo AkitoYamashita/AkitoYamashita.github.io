@@ -3,21 +3,24 @@ AWSTemplateFormatVersion: '2010-09-09'
 Parameters:
   SYSTEM:
     Type: String
+    AllowedPattern: "^[a-z]{3}$"
+    Default: "com"
   ENV:
     Type: String
     AllowedValues: 
-      - PRD
-      - STG
-      - DEV
-  S3BucketName:
+      - prd
+      - stg
+      - dev
+    Default: "prd"
+  BucketName:
     Type: String
-    Default: s3-com-prd-work-abcdefghijklmnopqrstuvwxyz
+    Default: "bucket-com-prd-tmp"
 
 Resources:
   S3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Sub ${S3BucketName}
+      BucketName: !Sub ${BucketName}
       PublicAccessBlockConfiguration:
           BlockPublicAcls: false
           BlockPublicPolicy: false
@@ -43,10 +46,10 @@ Resources:
           - Action:
             - "s3:GetObject"
             Effect: "Allow"
-            Resource: !Sub "arn:aws:s3:::${S3BucketName}/*"
+            Resource: !Sub "arn:aws:s3:::${BucketName}/*"
             Principal: "*"
       Bucket: !Ref S3Bucket
 
 Outputs:
-  S3BucketName:
+  BucketName:
     Value: !Ref S3Bucket
