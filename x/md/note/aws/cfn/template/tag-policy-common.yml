@@ -22,9 +22,9 @@ Resources:
               },
               "tag_value": {
                 "@@assign": [
-                  "PRD",
-                  "STG",
-                  "DEV"
+                  "prd",
+                  "stg",
+                  "dev"
                 ]
               }
             },
@@ -35,8 +35,3 @@ Resources:
             }
           }
         }
-
-Outputs:
-  TagPolicyId:
-    Description: Created Tag Policy ID (attach manually)
-    Value: !Ref TagPolicyCommon

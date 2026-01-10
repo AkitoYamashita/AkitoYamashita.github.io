@@ -38,7 +38,8 @@ sidebar: false
     - [Tips](./note/aws/tips/README.md)
       - [Service](./note/aws/tips/service.md)
       - [Operation](./note/aws/tips/operation.md)
-    - [CloudFormation](./note/aws/cfn/README.md)
+      - [Template](./note/aws/tips/template.md)
+    - CloudFormation
       - [S3](./note/aws/cfn/s3.md)
       - [CodePipeline](./note/aws/cfn/pipeline.md)
       - [CodeBuild](./note/aws/cfn/codebuild.md)

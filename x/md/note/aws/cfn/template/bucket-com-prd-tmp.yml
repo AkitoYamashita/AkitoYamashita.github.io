@@ -30,12 +30,12 @@ Resources:
         IndexDocument: index.html
         ErrorDocument: error.html
       Tags:
+        - Key: STACK_NAME
+          Value: !Ref AWS::StackName
         - Key: SYSTEM
           Value: !Sub ${SYSTEM}
         - Key: ENV
           Value: !Sub ${ENV}
-        - Key: STACK_NAME
-          Value: !Ref AWS::StackName
       
   S3BucketPolicy:
     DependsOn: S3Bucket
@@ -49,7 +49,3 @@ Resources:
             Resource: !Sub "arn:aws:s3:::${BucketName}/*"
             Principal: "*"
       Bucket: !Ref S3Bucket
-
-Outputs:
-  BucketName:
-    Value: !Ref S3Bucket

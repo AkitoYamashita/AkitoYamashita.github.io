@@ -5,8 +5,7 @@ Parameters:
   OrganizationsManagementAccountId:
     Type: String
     Description: AWS Organizations management account ID allowed to run organizations:* (root principal)
-    Default: "123456789012"
-    AllowedPattern: "^(?!123456789012$)[0-9]{12}$"
+    AllowedPattern: "^[0-9]{12}$"
 
 Resources:
   ScpCommonPolicy:
@@ -46,8 +45,3 @@ Resources:
               ArnNotLike:
                 aws:PrincipalArn:
                   - !Sub "arn:aws:iam::${OrganizationsManagementAccountId}:root"
-
-Outputs:
-  ScpCommonPolicyId:
-    Description: Created SCP common policy ID
-    Value: !Ref ScpCommonPolicy

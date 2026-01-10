@@ -1,4 +1,4 @@
-# CloudFormation
+# CloudFormation Template
 
 ## CloudFormation Function
 
@@ -27,4 +27,52 @@ AWS::StackName -> スタック名を取得
 AWS::AccountId -> AWSアカウントIDを取得
 AWS::NotificationARNs -> notification Amazon Resource Names(ARNs)を取得
 AWS::NoValue -> 指定されたプロパティを無視するようにCloudFormationに伝える
+```
+
+## Snipet
+
+### タグ
+
+```yml
+Parameters:
+  SYSTEM:
+    Type: String
+    AllowedPattern: "^[a-z]{3}$"
+    Default: "xxx"
+  ENV:
+    Type: String
+    AllowedValues: 
+      - prd
+      - stg
+      - dev
+Resources:
+    XXXXX:
+      Tags:
+        - Key: STACK_NAME
+          Value: !Ref AWS::StackName
+        - Key: SYSTEM
+          Value: !Sub ${SYSTEM}
+        - Key: ENV
+          Value: !Sub ${ENV}
+```
+
+### アウトプット
+
+下記のような他スタック・他ツールから参照しやすいもの以外は基本設定しない
+
+- VPC ID
+- Subnet ID
+- SecurityGroup ID
+- IAM Role ARN
+- KMS Key ARN
+- S3 Bucket Name
+- SQS Queue URL / ARN
+
+```yml
+Resources:
+    XXXXX:
+    ...
+Outputs:
+  OutputXXXXX:
+    Value: !Ref XXXXX
 ```

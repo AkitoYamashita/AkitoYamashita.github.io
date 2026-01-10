@@ -6,7 +6,6 @@ Parameters:
     Description: "IAM Identity Center(SSO) Instance ARN"
     Type: String
     Default: "arn:aws:sso:::instance/ssoins-xxx"
-    AllowedPattern: "^(?!arn:aws:sso:::instance/ssoins-xxx$).+"
   # リレーステートURL
   RelayStateType:
     Description: "Used to redirect users within the application during the federation authentication process."
