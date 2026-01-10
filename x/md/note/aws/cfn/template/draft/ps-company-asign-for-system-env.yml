@@ -1,0 +1,57 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: "Permission set example"
+Parameters:
+  # IAM Identity Center(SSO) インスタンスのARN
+  InstanceArn:
+    Description: "IAM Identity Center(SSO) Instance ARN"
+    Type: String
+    Default: "arn:aws:sso:::instance/ssoins-xxx"
+    AllowedPattern: "^(?!arn:aws:sso:::instance/ssoins-xxx$).+"
+  # リレーステートURL
+  RelayStateType:
+    Description: "Used to redirect users within the application during the federation authentication process."
+    Type: String
+    Default: "https://ap-northeast-1.console.aws.amazon.com/console/home"
+  # セッション期間
+  SessionDuration:
+    Description: "The length of time that the application user sessions are valid for in the ISO-8601 standard."
+    Type: String
+    Default: "PT12H"
+Resources:
+  Example:
+    Type: AWS::SSO::PermissionSet
+    Properties:
+      InstanceArn: !Ref InstanceArn
+      # 基本設定
+      Name: "example-ps"
+      Description: "example permission set"
+      Tags:
+        - Key: "example-key"
+          Value: "example-value"
+      # 操作周り
+      RelayStateType: !Ref RelayStateType
+      SessionDuration: !Ref SessionDuration
+      # 権限
+      ManagedPolicies:
+        - "arn:aws:iam::aws:policy/ReadOnlyAccess"
+        - "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+      InlinePolicy:
+        Version: "2012-10-17"
+        Statement:
+          - Sid: "example"
+            Effect: "Allow"
+            Action:
+              - "ec2:DescribeRegions"
+            Resource: "*"
+      CustomerManagedPolicyReferences:
+        - Path: "/"
+          Name: "ExamplePolicy1"
+        - Path: "/"
+          Name: "ExamplePolicy2"
+      PermissionsBoundary:
+        # カスタマー管理ポリシーを指定する場合
+        CustomerManagedPolicyReference:
+          Name: "ExamplePermissionsBoundaryPolicy"
+          Path: "/"
+        # # AWS 管理ポリシーを指定する場合
+        # ManagedPolicyArn: "arn:aws:iam::aws:policy/PowerUserAccess"
