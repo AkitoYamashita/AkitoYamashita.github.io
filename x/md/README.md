@@ -35,7 +35,7 @@ sidebar: false
   - [Docker](./note/docker.md)
   - [VSCode](./note/vscode.md)
   - [AWS](./note/aws/README.md)
-    - [Operation](./note/aws/cfn/operation.md)
+    - [Operation](./note/aws/operation.md)
     - [CloudFormation](./note/aws/cfn/README.md)
       - [S3](./note/aws/cfn/s3.md)
       - [CodePipeline](./note/aws/cfn/pipeline.md)
