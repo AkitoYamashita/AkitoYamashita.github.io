@@ -1,0 +1,43 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Sample SSO PermissionSet with CustomerManagedPolicyReferences
+
+Parameters:
+  SsoInstanceArn:
+    Type: String
+    Description: "SSO Instance ARN"
+
+Resources:
+  # -----------------------------
+  # Customer Managed Policy
+  # -----------------------------
+  SampleS3ReadOnlyPolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      ManagedPolicyName: sample-sso-s3-readonly
+      Path: /sso/
+      Description: "Sample policy for SSO PermissionSet (S3 ReadOnly)"
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Action:
+              - s3:GetObject
+              - s3:ListBucket
+            Resource:
+              - arn:aws:s3:::*
+              - arn:aws:s3:::*/*
+
+  # -----------------------------
+  # Permission Set
+  # -----------------------------
+  SamplePermissionSet:
+    Type: AWS::SSO::PermissionSet
+    Properties:
+      Name: SampleS3ReadOnly
+      Description: "SSO PermissionSet using customer managed policy"
+      InstanceArn: !Ref SsoInstanceArn
+      SessionDuration: PT8H
+
+      CustomerManagedPolicyReferences:
+        - Name: sample-sso-s3-readonly
+          Path: /sso/

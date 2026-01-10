@@ -46,7 +46,7 @@ Resources:
       CustomerManagedPolicyReferences:
         - Path: "/"
           Name: "ExamplePolicy1"
-        - Path: "/"
+        - Path: "/sso/"
           Name: "ExamplePolicy2"
       PermissionsBoundary:
         # カスタマー管理ポリシーを指定する場合
