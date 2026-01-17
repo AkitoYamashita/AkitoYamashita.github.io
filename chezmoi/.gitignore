@@ -29,6 +29,10 @@ id_rsa.*
 tmp/
 **/tmp/
 
+### docs
+docs/
+**/docs/
+
 ### cache
 .cache/
 **/.cache/

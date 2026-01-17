@@ -14,9 +14,9 @@ jobs:
         with:
           timezoneLinux: "Asia/Tokyo"
 
-      # - run: |
-      #     mkdir -p tmp
-      #     date > ./tmp/.gitkeep
+      - run: |
+          mkdir -p tmp & touch ./tmp/.gitkeep
+          mkdir -p docs & date > ./docs/.gitkeep
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,11 +38,11 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: my_site
-          path: tmp
+          path: docs
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: tmp
+          path: docs
 
   deploy:
     needs: build

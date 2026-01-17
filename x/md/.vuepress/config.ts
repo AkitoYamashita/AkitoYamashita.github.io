@@ -15,7 +15,7 @@ export default {
   lang: 'ja-JP',
   title: "AkitoYamashita.github.io",
   description: "備忘録",
-  dest: "tmp/",
+  dest: "docs/",
   base: "/",
   public: path.resolve(__dirname, './public/'),
   bundler: viteBundler(),

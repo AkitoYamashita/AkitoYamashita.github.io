@@ -25,9 +25,9 @@ reset:
 	rm -rf ./node_modules ./package-lock.json && npm install
 clean: # cache delete
 	rm -rf ./node_modules && npm ci
-	rm -rf ./tmp
-	mkdir -p tmp
-	date > ./tmp/.gitkeep
+	rm -rf ./tmp && rm -rf ./docs
+	mkdir -p tmp && mkdir -p docs
+	touch ./tmp/.gitkeep && date > ./docs/.gitkeep
 link: # recreate symbolic link
 	## for public src files
 	rm -f ./x/md/.vuepress/public/src && ln -s ./../../../src ./x/md/.vuepress/public/src
