@@ -46,5 +46,3 @@ versioning:
 version: # check version
 	@curl -s https://AkitoYamashita.github.io/version.txt
 workflow:clean versioning build # call by github action
-chezmoi: # reclone AkitoYamashita/chezmoi
-	@rm -rf vendor/chezmoi; git clone --depth=1 https://github.com/AkitoYamashita/chezmoi.git vendor/chezmoi
