@@ -1,0 +1,88 @@
+#.gitignore_global
+
+#.gitignore内の記述は上の行から順に以下のように解釈される。
+#
+#/を含まない行（fileなど）
+#.gitignore以下の全サブディレクトリ下にあるこの名前のファイル or ディレクトリを無視する
+#
+#末尾以外にのみ/を含む行（/file, /path/to/file, path/to/fileなど）
+#.gitignoreが置いてあるディレクトリをカレントディレクトリとする相対パスで指定されるファイル or ディレクトリを無視する
+#先頭の/はルートを意味せず単に無視される
+#
+#末尾だけ/な行（directory/など）
+#.gitignore以下の全サブディレクトリ下にあるこの名前のディレクトリを無視する
+#末尾以外にも末尾にも/を含む行（/directory/, /path/to/directory/, path/to/directory/など）
+#.gitignoreが置いてあるディレクトリをカレントディレクトリとする相対パスで指定されるディレクトリを無視する
+#先頭の/はルートを意味せず単に無視される
+#
+#!で始まる行（!/path/to/fileなど）
+#!以降のパターン文字列が示すファイル or ディレクトリを無視しない
+#前の無視指定を上書きする
+#以降の無視指定に上書きされうる
+#
+#空行 or #で始まる行
+#解釈されない
+
+## common
+!.gitkeep
+
+## intellij
+*.iml
+**/.idea/*
+!**/.idea/runConfigurations
+!**/.idea/libraries/Go_SDK.xml
+*.o
+__pycache__
+*.pyc
+
+
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+
+# User-specific stuff:
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictionaries
+
+# Sensitive or high-churn files:
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.xml
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+
+# Gradle:
+.idea/**/gradle.xml
+.idea/**/libraries
+
+# CMake
+cmake-build-debug/
+
+# Mongo Explorer plugin:
+.idea/**/mongoSettings.xml
+
+## File-based project format:
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+/out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Cursive Clojure plugin
+.idea/replstate.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties

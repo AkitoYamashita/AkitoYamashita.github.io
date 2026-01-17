@@ -1,0 +1,4 @@
+(if
+  (matches (window_class) "Gnome-terminal")
+  (opacity 70)
+)

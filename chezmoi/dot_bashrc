@@ -1,0 +1,6 @@
+# ~/.bashrc
+
+## f
+if [ -f "${HOME}/hub/x/f/SHRC" ]; then
+    source "${HOME}/hub/x/f/SHRC"
+fi

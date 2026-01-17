@@ -1,0 +1,11 @@
+# ctrl+o close
+# ctrl+w Search (Next -> ctrl+w)
+# ctrl+^ SelectAreaStart
+# ctrl+k Cut
+# ctrl+u Paste
+
+set nowrap
+set softwrap
+set smooth
+
+include ~/.nano/syntax/ALL.nanorc

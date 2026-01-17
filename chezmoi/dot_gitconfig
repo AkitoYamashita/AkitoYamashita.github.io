@@ -1,0 +1,27 @@
+[user]
+	email = akt.ymst@gmail.com
+	name = AkitoYamashita
+[push]
+	default = simple
+[core]
+	autocrlf = input
+	excludesfile = ~/.gitignore_global
+	compression = 0
+	packedGitLimit = 512m 
+	packedGitWindowSize = 512m 
+	whitespace = cr-at-eol
+	editor = vi
+[pack] 
+	deltaCacheSize = 2047m 
+	packSizeLimit = 2047m 
+	windowMemory = 2047m
+[http]
+	postBuffer = 524288000
+[credential]
+	helper = store
+[init]
+	defaultBranch = main
+[fetch]
+	prune = true
+[help]
+	autocorrect = 10

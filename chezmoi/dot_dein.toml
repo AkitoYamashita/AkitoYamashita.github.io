@@ -1,0 +1,10 @@
+#~/.dein.toml
+
+#[[plugins]]
+$repo = 'axrat/winry.vim'
+
+#[[plugins]]
+#repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'

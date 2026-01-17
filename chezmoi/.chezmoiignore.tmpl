@@ -1,0 +1,34 @@
+# ~/.local/share/chezmoi/.chezmoiignore
+
+## chezmoi
+/README.md
+/.gitignore
+
+## develop
+**/node_modules/*
+**/vendor/*
+
+## vim
+.vim/.netrwhist
+*.swp
+*.swo
+*.swx
+*~
+*.un~
+
+## os
+{{ if ne .chezmoi.os "linux" }}
+.i3/**
+.devilspie/**
+.Xdefaults
+._xinitrc
+{{ end }}
+
+{{ if ne .chezmoi.os "darwin" }}
+{{ end }}
+
+{{ if ne .chezmoi.os "windows" }}
+{{ end }}
+
+{{ if eq .profile "private" }}
+{{ end }}

@@ -1,0 +1,19 @@
+#for wer cmd completion
+_wer(){
+  #COMPREPLY=(help);
+  local cur prev cword
+  _get_comp_words_by_ref -n : cur prev cword
+  if [ "${cword}" -eq 1 ]; then
+    COMPREPLY=( $(compgen -W "help hello check init run status werc (--test/-t)" -- "${cur}") )
+  elif [ "${cword}" -eq 2 ]; then
+    if [ "${prev}" = "status" ]; then
+      COMPREPLY=( $(compgen -W "load write" -- "${cur}") )
+    elif [ "${prev}" = "werc" ]; then
+      COMPREPLY=( $(compgen -W "load write" -- "${cur}") )
+	elif [ "${prev}" = "--test" -o "${prev}" = "-t" ]; then
+      compopt -o filenames
+      COMPREPLY=( $(compgen -f -- "${cur}") )
+    fi
+  fi
+} &&
+complete -F _wer wer

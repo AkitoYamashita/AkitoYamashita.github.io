@@ -1,0 +1,5 @@
+# ~/.netrc
+
+#machine api.github.com
+#  login xxxxx
+#  password xxxxx

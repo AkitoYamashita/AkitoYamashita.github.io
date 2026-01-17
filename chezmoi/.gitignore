@@ -1,0 +1,54 @@
+# ~/.local/share/chezmoi/.gitignore
+
+## common
+.DS_Store
+.idea/
+.vscode/
+
+### .env
+.env
+.env.*
+*.env
+
+### .ssh
+.ssh/
+**/.ssh/
+id_rsa
+id_rsa.*
+*.pem
+*.key
+*.p12
+
+### aws
+.aws/credentials
+.aws/config
+**/.aws/credentials
+**/.aws/config
+
+### tmp
+tmp/
+**/tmp/
+
+### cache
+.cache/
+**/.cache/
+
+### develop
+node_modules/
+dist/
+build/
+*.exe
+*.out
+
+### log
+*.log
+logs/
+**/logs/
+
+## vim
+.vim/.netrwhist
+*.swp
+*.swo
+*.swx
+*~
+*.un~

@@ -1,0 +1,51 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Parameters:
+  SYSTEM:
+    Type: String
+    AllowedPattern: "^[a-z]{3}$"
+    Default: "com"
+  ENV:
+    Type: String
+    AllowedValues: 
+      - prd
+      - stg
+      - dev
+    Default: "prd"
+  BucketName:
+    Type: String
+    Default: "bucket-{{ .cfn_account2_system }}-{{ .cfn_account3_env }}-tmp"
+
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub ${BucketName}
+      PublicAccessBlockConfiguration:
+          BlockPublicAcls: false
+          BlockPublicPolicy: false
+          IgnorePublicAcls: false
+          RestrictPublicBuckets: false
+      WebsiteConfiguration: 
+        IndexDocument: index.html
+        ErrorDocument: error.html
+      Tags:
+        - Key: STACK_NAME
+          Value: !Ref AWS::StackName
+        - Key: SYSTEM
+          Value: !Sub ${SYSTEM}
+        - Key: ENV
+          Value: !Sub ${ENV}
+      
+  S3BucketPolicy:
+    DependsOn: S3Bucket
+    Type: "AWS::S3::BucketPolicy"
+    Properties:
+      PolicyDocument:
+        Statement:
+          - Action:
+            - "s3:GetObject"
+            Effect: "Allow"
+            Resource: !Sub "arn:aws:s3:::${BucketName}/*"
+            Principal: "*"
+      Bucket: !Ref S3Bucket
