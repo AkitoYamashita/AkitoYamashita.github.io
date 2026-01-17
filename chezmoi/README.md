@@ -6,17 +6,20 @@ Files under $HOME are treated as generated artifacts and are not versioned.
 ## install
 
 ```bash
-# linux
+// linux
 sh -c "$(curl -fsLS get.chezmoi.io)"
-#  mac
+//  mac
 brew install chezmoi
-# windows
+// windows
 curl -fsLS get.chezmoi.io | sh
 ```
 
 ## setup
 
 ```bash
+mkdir -p ~/.local/share
+// `hub install chezmoi` または
+// `ln -s ~/hub/~/AkitoYamashita.github.io/chezmoi ~/.local/share/chezmoi`
 chezmoi init https://github.com/AkitoYamashita/chezmoi && chezmoi apply
 ```
 
