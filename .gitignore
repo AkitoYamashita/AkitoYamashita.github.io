@@ -20,7 +20,9 @@
 
 ## Temporary files
 /tmp/**
-!/tmp/.gitkeep
+!/tmp/docs
+/tmp/docs/**
+!/tmp/docs/.gitkeep
 
 ## Vendor files
 /vendor/**

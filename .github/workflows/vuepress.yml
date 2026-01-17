@@ -14,12 +14,12 @@ jobs:
         with:
           timezoneLinux: "Asia/Tokyo"
 
-      # - run: |
-      #     mkdir -p tmp & echo "" > ./tmp/.gitkeep
-      #     mkdir -p docs & date > ./docs/.gitkeep
-
       - name: Checkout
         uses: actions/checkout@v4
+
+      - run: |
+          mkdir -p tmp/docs
+          date > tmp/docs/.gitkeep
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -38,11 +38,11 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: my_site
-          path: docs
+          path: tmp/docs
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: docs
+          path: tmp/docs
 
   deploy:
     needs: build

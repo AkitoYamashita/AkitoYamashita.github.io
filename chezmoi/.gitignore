@@ -27,11 +27,9 @@ id_rsa.*
 
 ### tmp
 tmp/
+!tmp/.gitkeep
 **/tmp/
-
-### docs
-docs/
-**/docs/
+!**/tmp/.gitkeep
 
 ### cache
 .cache/
