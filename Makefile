@@ -20,7 +20,7 @@ base: # base path
 guide: # open guide page by WSL
 	/mnt/c/Windows/explorer.exe https://v2.vuepress.vuejs.org/guide/
 config: # edit VuePress config file
-	vim ./x/md/.vuepress/config.ts
+	vim ./markdown/.vuepress/config.ts
 reset:
 	rm -rf ./node_modules ./package-lock.json && npm install
 clean: # cache delete
@@ -29,20 +29,20 @@ clean: # cache delete
 	mkdir -p ./tmp/docs
 	date > ./tmp/docs/.gitkeep
 link: # recreate symbolic link
-	## for public src files
-	rm -f ./x/md/.vuepress/public/src && ln -s ./../../../src ./x/md/.vuepress/public/src
-	## for src markdown pages
-	rm -f ./x/md/src && ln -s ./../src ./x/md/src 
+# 	## for public src files
+# 	rm -f ./x/md/.vuepress/public/src && ln -s ./../../../src ./x/md/.vuepress/public/src
+# 	## for src markdown pages
+# 	rm -f ./x/md/src && ln -s ./../src ./x/md/src 
 	## for public chezmoi files
-	rm -f ./x/md/.vuepress/public/chezmoi && ln -s ./../../chezmoi ./x/md/.vuepress/public/chezmoi
+	rm -f ./markdown/.vuepress/public/chezmoi && ln -s ./../../chezmoi ./markdown/.vuepress/public/chezmoi
 dev:link # dev mode server
-	./node_modules/vuepress/bin/vuepress.js dev x/md --debug
+	./node_modules/vuepress/bin/vuepress.js dev markdown --debug
 serve:link # release mode server
-	./node_modules/vuepress/bin/vuepress.js dev x/md --host 0.0.0.0 --no-watch --clean-cache --clean-temp 
+	./node_modules/vuepress/bin/vuepress.js dev markdown --host 0.0.0.0 --no-watch --clean-cache --clean-temp 
 build:chezmoi link # release build
-	./node_modules/vuepress/bin/vuepress.js build x/md --clean-cache --clean-temp 
+	./node_modules/vuepress/bin/vuepress.js build markdown --clean-cache --clean-temp 
 versioning:
-	echo "Build: $$(TZ='Asia/Tokyo' date '+%Y-%m-%d %H:%M:%S JST')" > x/md/.vuepress/public/version.txt
+	echo "Build: $$(TZ='Asia/Tokyo' date '+%Y-%m-%d %H:%M:%S JST')" > markdown/.vuepress/public/version.txt
 version: # check version
 	@curl -s https://AkitoYamashita.github.io/version.txt
 workflow:clean versioning build # call by github action

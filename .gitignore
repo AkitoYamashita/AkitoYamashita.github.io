@@ -10,9 +10,8 @@
 /.vscode
 
 ## VuePress Extend
-/x/md/.vuepress/public/src
-/x/md/src
-/x/md/.vuepress/public/version.txt
+/markdown/.vuepress/public/src
+/markdown/.vuepress/public/version.txt
 
 ## Temporary files
 /tmp/**
