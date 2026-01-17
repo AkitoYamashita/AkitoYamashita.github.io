@@ -3,8 +3,12 @@
 ## common
 !.gitkeep
 
-## for hub
+## hub
 /clone.sh
+
+## github pages
+/docs/**
+!/docs/.gitkeep
 
 ## VSCode
 .vscode/settings.json
