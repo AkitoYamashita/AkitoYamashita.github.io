@@ -13,9 +13,17 @@ sidebar: auto
 
 - [README.md](README.md)
 - [.gitkeep](.gitkeep)
+- [package.sh](package.sh)
 
-## [.gitkeep]([.gitkeep)
+## [.gitkeep](.gitkeep)
+
+```text
+<!-- @include: ./.gitkeep -->
+```
+
+
+## [package.sh](package.sh)
 
 ```bash
-<!-- @include: ./.gitkeep -->
+<!-- @include: ./package.sh -->
 ```

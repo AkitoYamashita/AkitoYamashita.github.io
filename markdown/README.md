@@ -16,6 +16,7 @@ sidebar: false
   - [x](./chezmoi/x/)
     - [cfn](./chezmoi/x/cfn/)
 - [source](./src/)
+  - [package.sh](./src/package.sh)
 - [log](./log/README.md)
   - [アーキテクチャー検討](./log/20250915_architecture.md)
   - [EC2だけでiOSアプリをリリース](./log/20231223_ec2mac.md)
