@@ -12,6 +12,10 @@
 /tmp/**
 !/tmp/.gitkeep
 
+## Vendor files
+/vendor/**
+!/vendor/.gitkeep
+
 ## Extra
 mo
 
