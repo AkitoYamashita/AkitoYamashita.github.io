@@ -33,6 +33,8 @@ link: # recreate symbolic link
 	rm -f ./x/md/.vuepress/public/src && ln -s ./../../../src ./x/md/.vuepress/public/src
 	## for src markdown pages
 	rm -f ./x/md/src && ln -s ./../src ./x/md/src 
+	## for public chezmoi files
+	rm -f ./x/md/.vuepress/public/chezmoi && ln -s ./../../chezmoi ./x/md/.vuepress/public/chezmoi
 dev:link # dev mode server
 	./node_modules/vuepress/bin/vuepress.js dev x/md --debug
 serve:link # release mode server
