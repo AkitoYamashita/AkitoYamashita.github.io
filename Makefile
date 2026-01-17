@@ -5,6 +5,7 @@
 SHELL=/usr/bin/env bash
 DIR:=$(realpath $(firstword $(MAKEFILE_LIST)))
 BASE:=$(shell dirname ${DIR})
+GITHUB_PAGES_BASE_URL:="https://AkitoYamashita.github.io/"
 ##
 #define README
 ## README
@@ -44,5 +45,7 @@ build:chezmoi link # release build
 versioning:
 	echo "Build: $$(TZ='Asia/Tokyo' date '+%Y-%m-%d %H:%M:%S JST')" > markdown/.vuepress/public/version.txt
 version: # check version
-	@curl -s https://AkitoYamashita.github.io/version.txt
+	@curl -s ${GITHUB_PAGES_BASE_URL}/version.txt
+open:
+	open ${GITHUB_PAGES_BASE_URL}
 workflow:clean versioning build # call by github action
