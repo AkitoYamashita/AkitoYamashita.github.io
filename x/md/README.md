@@ -13,6 +13,8 @@ sidebar: false
 
 - [profile](./profile.md)
 - [chezmoi](./chezmoi/)
+  - [x](./chezmoi/x/)
+    - [cfn](./chezmoi/x/cfn/)
 - [source](./src/)
 - [log](./log/README.md)
   - [アーキテクチャー検討](./log/20250915_architecture.md)
