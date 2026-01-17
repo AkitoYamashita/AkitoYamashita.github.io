@@ -45,27 +45,27 @@ git init
 git remote add     origin git@github.com:username/repo.git
 git remote set-url origin git@bitbucket.org:username/repo.git
 git fetch origin
-git reset --hard origin/master
+git reset --hard origin/main
 ```
 
 ### Commit
 
 ```bash
 git commit -m "initialize"
-git push --set-upstream origin master
+git push --set-upstream origin main
 ```
 
 ### Push(Force)
 
 ```bash
-git push --force origin master
+git push --force origin main
 git push https://username:password@github.com/user/repository.git --all
 ```
 
 ### RewritingHistory
 
 ```bash
-git checkout master
+git checkout main
 git filter-branch -f --tree-filter 'git rm -rf --cached --ignore-unmatch [directory]/' HEAD
 git gc
 ```
@@ -91,14 +91,14 @@ git reset HEAD ./.gitignore
 ```bash
 git checkout --orphan tmp
 git commit -m "override"
-git checkout -B master
+git checkout -B main
 git branch -d tmp
 git push -f
 ```
 
 ### Github wget repository
 
-`wget --no-check-certificate https://github.com/username/repo/archive/master.zip`
+`wget --no-check-certificate https://github.com/username/repo/archive/main.zip`
 
 ### Bitbucket.org wget repository
 
@@ -108,10 +108,10 @@ PASS="pass"
 TEAM="team"
 REPO="repo"
 TARGET="README.md"
-wget --user=$USER --ask-password https://bitbucket.org/$TEAM/$REPO/raw/master/$TARGET
-wget --user=$USER --password=$PASS https://bitbucket.org/$TEAM/$REPO/get/master.zip
+wget --user=$USER --ask-password https://bitbucket.org/$TEAM/$REPO/raw/main/$TARGET
+wget --user=$USER --password=$PASS https://bitbucket.org/$TEAM/$REPO/get/main.zip
 
-curl --digest --user username:password https://bitbucket.org/username/repo/get/master.zip -o master.zip
+curl --digest --user username:password https://bitbucket.org/username/repo/get/main.zip -o main.zip
 ```
 
 ### UpdateRepositoryName

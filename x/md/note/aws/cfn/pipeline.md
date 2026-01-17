@@ -72,8 +72,7 @@ Resources:
           referenceType:
             - branch
           referenceName:
-            # - main
-            - master
+            - main
       Targets:
         -
           Arn: 
@@ -123,7 +122,7 @@ Resources:
                 - Name: SourceArtifact
               Configuration:
                 RepositoryName: !Sub ${SourceRepository}
-                BranchName: master
+                BranchName: main
                 PollForSourceChanges: false ## for EventBridge Polling
               RunOrder: 1
         - Name: Build
