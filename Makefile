@@ -29,7 +29,7 @@ clean: # cache delete
 	mkdir -p tmp
 	date > ./tmp/.gitkeep
 link: # recreate symbolic link
-	## for public static files
+	## for public src files
 	rm -f ./x/md/.vuepress/public/src && ln -s ./../../../src ./x/md/.vuepress/public/src
 	## for src markdown pages
 	rm -f ./x/md/src && ln -s ./../src ./x/md/src 
