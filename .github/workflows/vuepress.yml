@@ -15,7 +15,7 @@ jobs:
           timezoneLinux: "Asia/Tokyo"
 
       - run: |
-          mkdir -p tmp & touch ./tmp/.gitkeep
+          mkdir -p tmp & echo "" > ./tmp/.gitkeep
           mkdir -p docs & date > ./docs/.gitkeep
 
       - name: Checkout
