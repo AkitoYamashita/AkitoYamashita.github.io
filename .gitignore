@@ -1,4 +1,10 @@
+# .gitignore
+
+## common
 !.gitkeep
+
+## for hub
+/clone.sh
 
 ## VSCode
 .vscode/settings.json
