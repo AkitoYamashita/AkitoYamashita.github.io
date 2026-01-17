@@ -6,12 +6,8 @@
 ## hub
 /clone.sh
 
-## github pages
-/docs/**
-!/docs/.gitkeep
-
 ## VSCode
-.vscode/settings.json
+/.vscode
 
 ## VuePress Extend
 /x/md/.vuepress/public/src
