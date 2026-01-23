@@ -12,3 +12,8 @@
   - node: 20
 - nodenv
   - node: 20.17.0
+
+## Note
+
+- [Docusaurus](https://docusaurus.io/)
+  - プラグインでのローカル日本語検索が少し弱い?
