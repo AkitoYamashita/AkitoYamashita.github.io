@@ -5,7 +5,7 @@
 SHELL=/usr/bin/env bash
 DIR:=$(realpath $(firstword $(MAKEFILE_LIST)))
 BASE:=$(shell dirname ${DIR})
-GITHUB_PAGES_BASE_URL:="https://AkitoYamashita.github.io/"
+GITHUB_PAGES:="https://AkitoYamashita.github.io/"
 ##
 #define README
 ## README
@@ -15,15 +15,13 @@ _readme:
 	@echo '--- Makefile Task List ---'
 	@grep '^[^#[:space:]|_][a-z|_]*:' Makefile
 gip: # global ip
-	curl ifconfig.io
+	curl checkip.amazonaws.com
 base: # base path
 	@echo ${BASE}
 guide: # open guide page by WSL
 	/mnt/c/Windows/explorer.exe https://v2.vuepress.vuejs.org/guide/
 config: # edit VuePress config file
 	vim ./markdown/.vuepress/config.ts
-reset:
-	rm -rf ./node_modules ./package-lock.json && npm install
 clean: # cache delete
 	rm -rf ./node_modules && npm ci
 	rm -rf ./tmp 
@@ -40,12 +38,11 @@ dev:link # dev mode server
 	./node_modules/vuepress/bin/vuepress.js dev markdown --debug
 serve:link # release mode server
 	./node_modules/vuepress/bin/vuepress.js dev markdown --host 0.0.0.0 --no-watch --clean-cache --clean-temp 
-build:chezmoi link # release build
+build:link # release build
 	./node_modules/vuepress/bin/vuepress.js build markdown --clean-cache --clean-temp 
 versioning:
 	echo "Build: $$(TZ='Asia/Tokyo' date '+%Y-%m-%d %H:%M:%S JST')" > markdown/.vuepress/public/version.txt
-version: # check version
-	@curl -s ${GITHUB_PAGES_BASE_URL}/version.txt
-open:
-	open ${GITHUB_PAGES_BASE_URL}
 workflow:clean versioning build # call by github action
+open: # site browse
+	@curl -s ${GITHUB_PAGES}/version.txt
+	@open ${GITHUB_PAGES}
