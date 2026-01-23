@@ -14,7 +14,7 @@ Parameters:
     Default: "prd"
   BucketName:
     Type: String
-    Default: "bucket-{{ .cfn_account2_system }}-{{ .cfn_account3_env }}-tmp"
+    Default: "bucket-{{.cfn_account2_system}}-{{.cfn_account3_env}}-tmp"
 
 Resources:
   S3Bucket:

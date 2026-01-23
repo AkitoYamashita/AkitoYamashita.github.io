@@ -1,0 +1,63 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Resources:
+  ScpCommonPolicy:
+    Type: AWS::Organizations::Policy
+    Properties:
+      Name: "scp-common"
+      Description: "Common Service Control Policy"
+      Type: SERVICE_CONTROL_POLICY
+      Content:
+        Version: "2012-10-17"
+        Statement:
+          - Sid: DenyAllRegionsExceptTokyoAndUsEast1ExceptGlobalServices
+            Effect: Deny
+            NotAction:
+              - "iam:*"
+              - "route53:*"
+              - "cloudfront:*"
+              - "waf:*"
+              - "wafv2:*"
+              - "shield:*"
+              - "support:*"
+              - "budgets:*"
+              - "ce:*"
+            Resource: "*"
+            Condition:
+              StringNotEquals:
+                aws:RequestedRegion:
+                  - "ap-northeast-1"
+                  - "us-east-1"
+
+          - Sid: DenyOrganizationsWriteExceptMngRootAndMngAdminRoles
+            Effect: Deny
+            Action:
+              - "organizations:AcceptHandshake"
+              - "organizations:AttachPolicy"
+              - "organizations:CancelHandshake"
+              - "organizations:CloseAccount"
+              - "organizations:Create*"
+              - "organizations:DeclineHandshake"
+              - "organizations:Delete*"
+              - "organizations:DeregisterDelegatedAdministrator"
+              - "organizations:DetachPolicy"
+              - "organizations:Disable*"
+              - "organizations:Enable*"
+              - "organizations:InviteAccountToOrganization"
+              - "organizations:LeaveOrganization"
+              - "organizations:MoveAccount"
+              - "organizations:RegisterDelegatedAdministrator"
+              - "organizations:RemoveAccountFromOrganization"
+              - "organizations:TagResource"
+              - "organizations:UntagResource"
+              - "organizations:Update*"
+            Resource: "*"
+            Condition:
+              ArnNotLike:
+                aws:PrincipalArn:
+{{- if .cfn_scp_common_arns }}
+{{ .cfn_scp_common_arns | indent 18 }}
+{{- else }}
+                  - "arn:aws:iam::123456789012:root"
+                  - "arn:aws:iam::123456789012:role/aws-reserved/sso.amazonaws.com/*/AWSReservedSSO_ps-org-admin-for-xxx-prd_*"
+{{- end }}

@@ -1,2 +1,2 @@
 # DbVisualizer license key
-{{ .dbvisualizer_license }}
+{{.dbvisualizer_license}}
