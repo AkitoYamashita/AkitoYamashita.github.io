@@ -23,6 +23,8 @@ clean: # cache delete
 	$(MAKE) init
 build: # site build
 	node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build
+serve: # site serve
+	node ./node_modules/@docusaurus/core/bin/docusaurus.mjs serve
 versioning:
 	echo "Build: $$(TZ='Asia/Tokyo' date '+%Y-%m-%d %H:%M:%S JST')" > $(OUTPUT)/version.txt
 workflow:clean versioning build # call by github action
