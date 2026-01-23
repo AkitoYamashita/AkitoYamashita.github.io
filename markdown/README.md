@@ -38,16 +38,16 @@ sidebar: false
   - [python](./note/python.md)
   - [docker](./note/docker.md)
   - [vscode](./note/vscode.md)
-  - [aws](./note/aws/README.md)
-    - [tips](./note/aws/tips/README.md)
+  - aws
+    - tips
       - [service](./note/aws/tips/service.md)
       - [operation](./note/aws/tips/operation.md)
       - [template](./note/aws/tips/template.md)
-    - CloudFormation
+    - cloudformation
       - [s3](./note/aws/cfn/s3.md)
       - [pipeline](./note/aws/cfn/pipeline.md)
       - [codebuild](./note/aws/cfn/codebuild.md)
-      - [dynamoDB](./note/aws/cfn/dynamodb.md)
+      - [dynamodb](./note/aws/cfn/dynamodb.md)
       - [role-policy](./note/aws/cfn/role-policy.md)
   - [archive](./archive/README.md)
     - [rust - mdbook](./note/archive/mdbook.md)
