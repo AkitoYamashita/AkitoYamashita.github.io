@@ -14,11 +14,11 @@
 /markdown/.vuepress/public/version.txt
 
 ## Temporary files
-/tmp/**
-!/tmp/.gitkeep
-!/tmp/docs
-/tmp/docs/**
-!/tmp/docs/.gitkeep
+**/tmp/**
+!**/tmp/.gitkeep
+!**/tmp/docs
+**/tmp/docs/**
+!**/tmp/docs/.gitkeep
 
 ## Vendor files
 /vendor/**

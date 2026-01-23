@@ -30,7 +30,7 @@ init: # initialize
 	touch ./tmp/.gitkeep $(OUTPUT)/.gitkeep
 clean: # cache delete
 	rm -rf ./node_modules && npm ci
-	rm -rf ./tmp 
+	rm -rf $(OUTPUT) ./tmp 
 	$(MAKE) init
 dev: # dev mode server
 	./node_modules/vuepress/bin/vuepress.js dev markdown --debug
