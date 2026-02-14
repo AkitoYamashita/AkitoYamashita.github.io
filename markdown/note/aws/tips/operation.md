@@ -49,3 +49,4 @@
 - アカウントエイリアスを設定
 - アカウント色設定
 - Organization管理アカウントでのOU設定
+- CostExploreの有効化
