@@ -26,6 +26,9 @@
 ## .tmp
 **/*.tmp.*
 
+## mac
+.DS_Store
+
 ## common
 !.gitkeep
 
