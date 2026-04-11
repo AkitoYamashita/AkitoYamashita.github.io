@@ -35,9 +35,10 @@ sidebar: false
   - [unity](./note/unity.md)
   - [dart](./note/dart.md)
   - [golang](./note/golang.md)
-  - [python](./note/python.md)
   - [docker](./note/docker.md)
   - [vscode](./note/vscode.md)
+  - [python](./note/python/README.md)
+    - [playwright](./note/python/playwright.md)
   - aws
     - tips
       - [service](./note/aws/tips/service.md)
