@@ -4,10 +4,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ partial "title.html" . }} | {{ .Site.Title }}{{ end }}</title>
+	<link href="{{ "/pagefind/pagefind-ui.css" | relURL }}" rel="stylesheet">
+	<script src="{{ "/pagefind/pagefind-ui.js" | relURL }}" defer></script>
 </head>
 <body>
 	<header><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></header>
+	<div id="search"></div>
+	<script>window.addEventListener('DOMContentLoaded',function(){if(window.PagefindUI){new PagefindUI({element:"#search",showSubResults:true});}});</script>
 	<nav>{{ partial "sidebar.html" (dict "dirs" (partial "dirs.html" .) "parent" "" "depth" 0) }}</nav>
-	<main>{{ block "main" . }}{{ end }}</main>
+	<main data-pagefind-body>{{ block "main" . }}{{ end }}</main>
 </body>
 </html>

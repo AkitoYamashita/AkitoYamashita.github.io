@@ -4,6 +4,8 @@
 /hugo/public/**
 /hugo/resources/**
 /hugo/.hugo_build.lock
+## hugo/bin
+/hugo/bin/
 
 ## VuePress Extend
 /markdown/.vuepress/public/src
