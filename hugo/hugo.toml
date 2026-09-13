@@ -1,3 +1,13 @@
 baseURL = 'https://example.org/'
 locale = 'en-us'
-title = 'My New Hugo Project'
+title = "AkitoYamashita"
+
+enableGitInfo = true
+
+[[module.mounts]]
+source = "content"
+target = "content"
+
+[[module.mounts]]
+source = "../markdown/note"
+target = "content/note"

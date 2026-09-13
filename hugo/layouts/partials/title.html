@@ -1,0 +1,11 @@
+{{- /* front matterのtitleを優先し、無ければ本文の最初の見出し、それも無ければファイル名 */ -}}
+{{- with .Title -}}
+{{- . -}}
+{{- else -}}
+{{- $h := index (findRE `(?m)^#\s+(.+)$` .RawContent 1) 0 | default "" -}}
+{{- with $h -}}
+{{- replaceRE `^#\s+` "" . -}}
+{{- else -}}
+{{- with $.File -}}{{- .BaseFileName -}}{{- else -}}{{- $.Section -}}{{- end -}}
+{{- end -}}
+{{- end -}}

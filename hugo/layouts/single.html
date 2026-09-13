@@ -1,0 +1,6 @@
+{{ define "main" }}
+<article>
+	{{ .Content }}
+	{{ with .Lastmod }}<footer><time datetime="{{ .Format "2006-01-02" }}">最終更新: {{ .Format "2006-01-02" }}</time></footer>{{ end }}
+</article>
+{{ end }}

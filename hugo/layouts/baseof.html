@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ partial "title.html" . }} | {{ .Site.Title }}{{ end }}</title>
+</head>
+<body>
+	<header><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></header>
+	<nav>{{ partial "sidebar.html" (dict "dirs" (partial "dirs.html" .) "parent" "" "depth" 0) }}</nav>
+	<main>{{ block "main" . }}{{ end }}</main>
+</body>
+</html>

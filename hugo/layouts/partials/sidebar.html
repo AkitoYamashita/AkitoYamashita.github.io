@@ -1,0 +1,25 @@
+{{- /* .dirs=全ディレクトリ .parent=親パス(空ならトップ) .depth=親の階層数 */ -}}
+{{- $dirs := .dirs -}}
+{{- $parent := .parent -}}
+{{- $depth := .depth -}}
+{{- $children := slice -}}
+{{- range $dirs -}}
+{{- $ok := false -}}
+{{- if eq $parent "" -}}{{- $ok = eq (len (split . "/")) 1 -}}
+{{- else -}}{{- $ok = and (hasPrefix . (printf "%s/" $parent)) (eq (len (split . "/")) (add $depth 1)) -}}{{- end -}}
+{{- if $ok -}}{{- $children = $children | append . -}}{{- end -}}
+{{- end -}}
+{{- $pages := where site.RegularPages "File.Dir" (printf "%s/" $parent) -}}
+{{- if or $children $pages -}}
+<ul>
+{{- range $children }}
+	<li>
+		<span>{{ index (split . "/") (sub (len (split . "/")) 1) }}</span>
+		{{ partial "sidebar.html" (dict "dirs" $dirs "parent" . "depth" (len (split . "/"))) }}
+	</li>
+{{- end }}
+{{- range $pages }}
+	<li><a href="{{ .RelPermalink }}">{{ partial "title.html" . }}</a></li>
+{{- end }}
+</ul>
+{{- end -}}

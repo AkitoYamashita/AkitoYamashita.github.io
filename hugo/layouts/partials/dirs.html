@@ -1,0 +1,12 @@
+{{- /* 全ページのディレクトリを集め、中間ディレクトリも補ってスライスで返す */ -}}
+{{- $dirs := slice -}}
+{{- range .Site.RegularPages -}}
+{{- with .File -}}
+{{- $parts := split (strings.TrimSuffix "/" .Dir) "/" -}}
+{{- range $i, $p := $parts -}}
+{{- $path := delimit (first (add $i 1) $parts) "/" -}}
+{{- if not (in $dirs $path) -}}{{- $dirs = $dirs | append $path -}}{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- return (sort $dirs) -}}
