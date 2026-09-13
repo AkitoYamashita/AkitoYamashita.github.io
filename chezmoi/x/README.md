@@ -1,3 +1,0 @@
-# chezmoi/x
-
-[./cfn/](./cfn/)
