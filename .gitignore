@@ -4,7 +4,8 @@
 /hugo/public/**
 /hugo/resources/**
 /hugo/.hugo_build.lock
-## hugo/bin
+/hugo/static/pagefind/
+## hugo binary
 /hugo/bin/
 
 ## VuePress Extend

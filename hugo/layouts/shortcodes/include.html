@@ -1,0 +1,10 @@
+{{- /* 記事からの相対パスでファイルを読み、コードブロックとして描画する */ -}}
+{{- $rel := .Get 0 -}}
+{{- $lang := .Get 1 | default "" -}}
+{{- $dir := path.Dir .Page.File.Path -}}
+{{- $p := path.Join $dir $rel -}}
+{{- with readFile $p -}}
+{{- highlight . $lang "" -}}
+{{- else -}}
+<pre>include not found: {{ $p }}</pre>
+{{- end -}}

@@ -37,11 +37,14 @@ dl-hugo: # @hide
 dl-pagefind: # @hide
 	@mkdir -p $(BIN); os=$$(uname -s); arch=$$(uname -m); case "$$arch" in arm64|aarch64) a=aarch64 ;; *) a=x86_64 ;; esac; case "$$os" in Darwin) t=$$a-apple-darwin ;; Linux) t=$$a-unknown-linux-musl ;; MINGW*|MSYS*|CYGWIN*) t=$$a-pc-windows-msvc ;; *) echo "unsupported: $$os" >&2; exit 1 ;; esac; curl -fsSL "https://github.com/CloudCannon/pagefind/releases/download/v$(PAGEFIND_VERSION)/pagefind-v$(PAGEFIND_VERSION)-$$t.tar.gz" -o /tmp/pagefind.tar.gz; tar -xzf /tmp/pagefind.tar.gz -C $(BIN); rm -f /tmp/pagefind.tar.gz; $(BIN)/pagefind --version
 ##
-serv: # ローカルサーバを起動する
-	hugo server
-build: # 静的ファイルを出力し、検索インデックスを作る
-	hugo --minify && pagefind --site public
 clean: # 出力とキャッシュを削除する
 	rm -rf public resources .hugo_build.lock
 distclean: # bin配下のバイナリも含めて削除する
 	rm -rf public resources .hugo_build.lock bin
+build: # 静的ファイルを出力し、検索インデックスを作る
+	hugo --minify && pagefind --site public
+##
+serv: # ローカルサーバを起動する
+	hugo server
+serv-search: # 検索インデックスを固定してローカルサーバを起動する
+	hugo && pagefind --site public --output-path static/pagefind && hugo server
