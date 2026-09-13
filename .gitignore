@@ -1,14 +1,19 @@
 # .gitignore
 
+## hugo
+/hugo/public/**
+/hugo/resources/**
+/hugo/.hugo_build.lock
+
+## VuePress Extend
+/markdown/.vuepress/public/src
+/markdown/.vuepress/public/version.txt
+
 ## common
 !.gitkeep
 
 ## VSCode
 /.vscode
-
-## VuePress Extend
-/markdown/.vuepress/public/src
-/markdown/.vuepress/public/version.txt
 
 ## Temporary files
 **/tmp/**
