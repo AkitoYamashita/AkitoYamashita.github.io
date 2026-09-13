@@ -27,7 +27,7 @@
 		</button>
 	</header>
 	<div class="layout">
-		<nav>{{ partial "sidebar.html" (dict "dirs" (partial "dirs.html" .) "parent" "" "depth" 0) }}</nav>
+		{{ if ne .Params.sidebar false }}<nav>{{ partial "sidebar.html" (dict "dirs" (partial "dirs.html" .) "parent" "" "depth" 0) }}</nav>{{ end }}
 		<main data-pagefind-body>{{ block "main" . }}{{ end }}</main>
 	</div>
 	<script>

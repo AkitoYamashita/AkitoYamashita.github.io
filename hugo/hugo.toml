@@ -1,8 +1,12 @@
-baseURL = 'https://example.org/'
-locale = 'en-us'
+baseURL = 'https://akitoyamashita.github.io/'
+languageCode = 'ja-jp'
+defaultContentLanguage = 'ja'
 title = "AkitoYamashita"
 
 enableGitInfo = true
+
+[markup.goldmark.renderer]
+unsafe = true
 
 [[module.mounts]]
 source = "content"
@@ -11,3 +15,7 @@ target = "content"
 [[module.mounts]]
 source = "../markdown/note"
 target = "content/note"
+
+[[module.mounts]]
+source = "../markdown/README.md"
+target = "content/_index.md"
