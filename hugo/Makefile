@@ -13,9 +13,8 @@ BIN:=$(BASE)/bin
 export PATH:=$(BIN):$(PATH)
 .DEFAULT_GOAL := readme
 readme: # @hide
-	@grep -E '^[^#[:space:]].*:[[:space:]]*(#.*)?$$' Makefile | awk '/@hide$$/ {next} {sub(/#.*/, "\033[90m&\033[0m")}1'
-workflow: # Github Actions workflow
-	setup clean init build versioning
+	@grep -E '^[[:alnum:]_-]+:[^=].*' Makefile | awk '/# @hide$$/ {next} {sub(/#.*/, "\033[90m&\033[0m")}1'
+workflow: setup clean init build versioning # Github Actions workflow
 setup: # hugo と pagefind を用意する（既にあれば何もしない）
 	@$(MAKE) --no-print-directory setup-hugo
 	@$(MAKE) --no-print-directory setup-pagefind
