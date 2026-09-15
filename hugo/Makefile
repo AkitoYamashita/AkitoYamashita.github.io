@@ -11,16 +11,11 @@ PORT:=8080
 ## local binary directory (gitignore 対象)
 BIN:=$(BASE)/bin
 export PATH:=$(BIN):$(PATH)
-## README
 .DEFAULT_GOAL := readme
-define README
---- Makefile Task List --- #COMMENT
-endef
-export README
 readme: # @hide
-	@echo ${README}
-	@printf "\033[1;31m==== [Makefile] ====\033[0m\n"
 	@grep -E '^[^#[:space:]].*:[[:space:]]*(#.*)?$$' Makefile | awk '/@hide$$/ {next} {sub(/#.*/, "\033[90m&\033[0m")}1'
+workflow: # Github Actions workflow
+	setup clean init build versioning
 setup: # hugo と pagefind を用意する（既にあれば何もしない）
 	@$(MAKE) --no-print-directory setup-hugo
 	@$(MAKE) --no-print-directory setup-pagefind
@@ -48,7 +43,7 @@ serv: # ローカルサーバを起動する
 	hugo server --port $(PORT)
 preview: # ビルドして pythonサーバでpublicディレクトリをプレビューする（検索の確認用）
 	$(MAKE) --no-print-directory build && python3 -m http.server $(PORT) --directory public
-versioning:
+versioning: # バージョンファイルを生成
 	echo "Build: $$(TZ='Asia/Tokyo' date '+%Y-%m-%d %H:%M:%S JST')" > ./static/version.txt
 version: # site version browse
 	@curl -s ${GITHUB_PAGES}/version.txt

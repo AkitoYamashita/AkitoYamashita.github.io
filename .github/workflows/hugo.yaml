@@ -19,13 +19,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup tools
-        working-directory: hugo
-        run: make setup
-
-      - name: Build
-        working-directory: hugo
-        run: make build
+      - name: Workflow
+        run: make workflow
 
       - uses: actions/upload-pages-artifact@v3
         with:
