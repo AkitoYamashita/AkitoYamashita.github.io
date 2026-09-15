@@ -4,6 +4,7 @@ SHELL=/usr/bin/env bash
 ## var
 BASE:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 DATEID:=$(shell date +%Y%m%d%H%M%S)
+GITHUB_PAGES:="https://AkitoYamashita.github.io/"
 ## tool version (mise.toml と揃えること)
 HUGO_VERSION:=0.166.0
 PAGEFIND_VERSION:=1.5.2
@@ -44,6 +45,6 @@ preview: # ビルドして pythonサーバでpublicディレクトリをプレ�
 	$(MAKE) --no-print-directory build && python3 -m http.server $(PORT) --directory public
 versioning: # バージョンファイルを生成
 	echo "Build: $$(TZ='Asia/Tokyo' date '+%Y-%m-%d %H:%M:%S JST')" > ./static/version.txt
-version: # site version browse
+show: # site version browse
 	@curl -s ${GITHUB_PAGES}/version.txt
 	@open ${GITHUB_PAGES}

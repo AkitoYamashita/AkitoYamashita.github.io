@@ -2,7 +2,6 @@
 SHELL=/usr/bin/env bash
 DIR:=$(realpath $(firstword $(MAKEFILE_LIST)))
 BASE:=$(shell dirname ${DIR})
-GITHUB_PAGES:="https://AkitoYamashita.github.io/"
 ## サブディレクトリ（プロファイル
 PROFILE?=hugo
 .DEFAULT: # @hide
