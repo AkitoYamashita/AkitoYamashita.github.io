@@ -1,21 +1,19 @@
 baseURL = 'https://akitoyamashita.github.io/'
-languageCode = 'ja-jp'
+locale = 'ja-jp'
 defaultContentLanguage = 'ja'
-title = "AkitoYamashita"
+title = "AkitoYamashita.github.io"
 
 enableGitInfo = true
 
 [markup.goldmark.renderer]
 unsafe = true
 
+# [[module.mounts]]
+# source = "content"
+# target = "content"
+
 [[module.mounts]]
-source = "content"
+source = "../markdown"
 target = "content"
 
-[[module.mounts]]
-source = "../markdown/note"
-target = "content/note"
-
-[[module.mounts]]
-source = "../markdown/README.md"
-target = "content/_index.md"
+# ignoreFiles = ['markdown/ignore_directory/']

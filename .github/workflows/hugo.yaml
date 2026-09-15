@@ -16,33 +16,20 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v4
-
-      - run: |
-          mkdir -p tmp/docs
-          date > tmp/docs/.gitkeep
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v5
         with:
-          node-version: "22"
+          fetch-depth: 0
 
-      - name: Cache dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: npm-
+      - name: Setup tools
+        working-directory: hugo
+        run: make setup
 
-      - run: make workflow
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: my_site
-          path: tmp/docs
+      - name: Build
+        working-directory: hugo
+        run: make build
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: tmp/docs
+          path: hugo/public
 
   deploy:
     needs: build

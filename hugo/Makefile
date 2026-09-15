@@ -7,9 +7,9 @@ DATEID:=$(shell date +%Y%m%d%H%M%S)
 ## tool version (mise.toml と揃えること)
 HUGO_VERSION:=0.166.0
 PAGEFIND_VERSION:=1.5.2
+PORT:=8080
 ## local binary directory (gitignore 対象)
 BIN:=$(BASE)/bin
-## PATH に bin を先頭追加し、setup で入れたバイナリを優先する
 export PATH:=$(BIN):$(PATH)
 ## README
 .DEFAULT_GOAL := readme
@@ -45,6 +45,6 @@ build: # 静的ファイルを出力し、検索インデックスを作る
 	hugo --minify && pagefind --site public
 ##
 serv: # ローカルサーバを起動する
-	hugo server
-serv-search: # 検索インデックスを固定してローカルサーバを起動する
-	hugo && pagefind --site public --output-path static/pagefind && hugo server
+	hugo server --port $(PORT)
+preview: # ビルドして pythonサーバでpublicディレクトリをプレビューする（検索の確認用）
+	$(MAKE) --no-print-directory build && python3 -m http.server $(PORT) --directory public

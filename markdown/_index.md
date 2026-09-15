@@ -12,9 +12,6 @@ sidebar: false
 ---
 
 - [profile](./profile.md)
-- [chezmoi](./chezmoi/)
-  - [x](./chezmoi/x/)
-    - [cfn](./chezmoi/x/cfn/)
 - [source](./src/)
   - [package.sh](./src/package.sh)
 - [log](./log/README.md)
