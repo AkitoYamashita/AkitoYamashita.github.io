@@ -48,3 +48,8 @@ serv: # ローカルサーバを起動する
 	hugo server --port $(PORT)
 preview: # ビルドして pythonサーバでpublicディレクトリをプレビューする（検索の確認用）
 	$(MAKE) --no-print-directory build && python3 -m http.server $(PORT) --directory public
+versioning:
+	echo "Build: $$(TZ='Asia/Tokyo' date '+%Y-%m-%d %H:%M:%S JST')" > ./static/version.txt
+version: # site version browse
+	@curl -s ${GITHUB_PAGES}/version.txt
+	@open ${GITHUB_PAGES}
