@@ -1,53 +1,346 @@
 /* 既定はダーク(Darculaベース)。html[data-theme="light"] でライトへ切り替える */
-:root { --fg: #a9b7c6; --bg: #2b2b2b; --panel: #313335; --muted: #808080; --border: #3c3f41; --link: #589df6; --hover: #3c3f41; --code-bg: #313335; --accent: #cc7832; --sidebar-w: 220px; --header-h: 53px; }
-html[data-theme="light"] { --fg: #24292f; --bg: #fff; --panel: #f6f8fa; --muted: #57606a; --border: #d0d7de; --link: #0969da; --hover: #f6f8fa; --code-bg: #f6f8fa; --accent: #0550ae; }
-* { box-sizing: border-box; }
-body { margin: 0; font-family: -apple-system, "Helvetica Neue", "Hiragino Sans", sans-serif; color: var(--fg); background: var(--bg); line-height: 1.7; }
-header { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--panel); z-index: 20; }
-header a { color: var(--fg); text-decoration: none; font-weight: 600; white-space: nowrap; }
-#toggle, #theme { display: flex; align-items: center; border: 1px solid var(--border); background: none; border-radius: 6px; padding: 5px 8px; cursor: pointer; color: var(--muted); flex: 0 0 auto; }
-#toggle:hover, #theme:hover { background: var(--hover); color: var(--fg); }
-#search { flex: 1; min-width: 0; max-width: 480px; }
-.layout { display: flex; align-items: flex-start; }
-nav { width: var(--sidebar-w); flex: 0 0 var(--sidebar-w); padding: 10px 8px; border-right: 1px solid var(--border); position: sticky; top: var(--header-h); max-height: calc(100vh - var(--header-h)); overflow-y: auto; font-size: 12px; line-height: 1.45; background: var(--panel); }
-body.nav-closed nav { display: none; }
-nav ul { list-style: none; margin: 0; padding-left: 10px; }
-nav > ul { padding-left: 0; }
-nav a { color: var(--link); text-decoration: none; display: block; padding: 1px 4px; border-radius: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-nav a:hover { background: var(--hover); }
-nav summary { cursor: pointer; color: var(--accent); font-weight: 600; padding: 1px 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-nav summary::marker { font-size: 10px; color: var(--muted); }
-nav::-webkit-scrollbar { width: 6px; }
-nav::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-main { flex: 1 1 0; min-width: 0; padding: 24px 32px; max-width: 860px; }
-main h1 { margin-top: 0; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
-main h2 { border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-top: 32px; }
-main a { color: var(--link); }
-main pre { padding: 12px; border-radius: 6px; overflow-x: auto; }
-main code { background: var(--code-bg); padding: 2px 5px; border-radius: 4px; font-size: 0.9em; word-break: break-all; }
-main pre code { background: none; padding: 0; word-break: normal; }
-main img { max-width: 100%; }
-main table { border-collapse: collapse; display: block; overflow-x: auto; max-width: 100%; }
-main th, main td { border: 1px solid var(--border); padding: 6px 12px; }
-main blockquote { margin: 0; padding: 0 1em; border-left: 3px solid var(--accent); color: var(--muted); }
-footer { margin-top: 40px; padding-top: 12px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; }
+
+:root {
+	--fg: #a9b7c6;
+	--bg: #2b2b2b;
+	--panel: #313335;
+	--muted: #808080;
+	--border: #3c3f41;
+	--link: #589df6;
+	--hover: #3c3f41;
+	--code-bg: #313335;
+	--accent: #cc7832;
+	--sidebar-w: 220px;
+	--header-h: 53px;
+}
+
+html[data-theme="light"] {
+	--fg: #24292f;
+	--bg: #fff;
+	--panel: #f6f8fa;
+	--muted: #57606a;
+	--border: #d0d7de;
+	--link: #0969da;
+	--hover: #f6f8fa;
+	--code-bg: #f6f8fa;
+	--accent: #0550ae;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	overflow-y: scroll;
+	scrollbar-color: var(--border) var(--bg);
+}
+
+body {
+	margin: 0;
+	font-family: -apple-system, "Helvetica Neue", "Hiragino Sans", sans-serif;
+	color: var(--fg);
+	background: var(--bg);
+	line-height: 1.7;
+}
+
+button,
+input,
+select,
+textarea {
+	font: inherit;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 10px 16px;
+	border-bottom: 1px solid var(--border);
+	position: sticky;
+	top: 0;
+	background: var(--panel);
+	z-index: 20;
+}
+
+header a {
+	color: var(--fg);
+	text-decoration: none;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+#toggle,
+#theme {
+	display: flex;
+	align-items: center;
+	border: 1px solid var(--border);
+	background: none;
+	border-radius: 6px;
+	padding: 5px 8px;
+	cursor: pointer;
+	color: var(--muted);
+	flex: 0 0 auto;
+}
+
+#toggle:hover,
+#theme:hover {
+	background: var(--hover);
+	color: var(--fg);
+}
+
+#search {
+	flex: 1;
+	min-width: 0;
+	max-width: 480px;
+}
+
+.layout {
+	display: flex;
+	align-items: flex-start;
+}
+
+nav {
+	width: var(--sidebar-w);
+	flex: 0 0 var(--sidebar-w);
+	padding: 10px 8px;
+	border-right: 1px solid var(--border);
+	position: sticky;
+	top: var(--header-h);
+	max-height: calc(100vh - var(--header-h));
+	overflow-y: auto;
+	font-size: 12px;
+	line-height: 1.45;
+	background: var(--panel);
+}
+
+body.nav-closed nav {
+	display: none;
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 10px;
+}
+
+nav > ul {
+	padding-left: 0;
+}
+
+nav a {
+	color: var(--link);
+	text-decoration: none;
+	display: block;
+	padding: 1px 4px;
+	border-radius: 3px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+nav a:hover {
+	background: var(--hover);
+}
+
+nav summary {
+	cursor: pointer;
+	color: var(--accent);
+	font-weight: 600;
+	padding: 1px 4px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+nav summary::marker {
+	font-size: 10px;
+	color: var(--muted);
+}
+
+nav::-webkit-scrollbar {
+	width: 6px;
+}
+
+nav::-webkit-scrollbar-thumb {
+	background: var(--border);
+	border-radius: 3px;
+}
+
+main {
+	flex: 1 1 0;
+	min-width: 0;
+	padding: 24px 32px;
+	max-width: 860px;
+}
+
+main h1 {
+	margin-top: 0;
+	border-bottom: 1px solid var(--border);
+	padding-bottom: 8px;
+}
+
+main h2 {
+	border-bottom: 1px solid var(--border);
+	padding-bottom: 6px;
+	margin-top: 32px;
+}
+
+main a {
+	color: var(--link);
+}
+
+main pre {
+	padding: 12px;
+	border-radius: 6px;
+	overflow-x: auto;
+}
+
+main code {
+	background: var(--code-bg);
+	padding: 2px 5px;
+	border-radius: 4px;
+	font-size: 0.9em;
+	word-break: break-all;
+}
+
+main pre code {
+	background: none;
+	padding: 0;
+	word-break: normal;
+}
+
+main img {
+	max-width: 100%;
+}
+
+main table {
+	border-collapse: collapse;
+	display: block;
+	overflow-x: auto;
+	max-width: 100%;
+}
+
+main th,
+main td {
+	border: 1px solid var(--border);
+	padding: 6px 12px;
+}
+
+main blockquote {
+	margin: 0;
+	padding: 0 1em;
+	border-left: 3px solid var(--accent);
+	color: var(--muted);
+}
+
+footer {
+	margin-top: 40px;
+	padding-top: 12px;
+	border-top: 1px solid var(--border);
+	color: var(--muted);
+	font-size: 13px;
+}
+
 /* Pagefind UI をテーマに合わせる */
-#search { --pagefind-ui-primary: var(--fg); --pagefind-ui-text: var(--fg); --pagefind-ui-background: var(--bg); --pagefind-ui-border: var(--border); --pagefind-ui-tag: var(--panel); --pagefind-ui-border-width: 1px; --pagefind-ui-border-radius: 6px; --pagefind-ui-font: inherit; }
-#search .pagefind-ui__form { position: relative; }
-#search .pagefind-ui__search-input { background: var(--bg); color: var(--fg); font-size: 14px; padding: 6px 12px 6px 34px; height: auto; }
-#search .pagefind-ui__search-clear { background: none; color: var(--muted); font-size: 12px; }
-#search .pagefind-ui__drawer { position: absolute; top: 100%; left: 0; right: 0; background: var(--panel); border: 1px solid var(--border); border-radius: 6px; margin-top: 4px; padding: 0 12px; max-height: 70vh; overflow-y: auto; box-shadow: 0 4px 16px rgba(0,0,0,.4); }
-#search .pagefind-ui__result { border-top: 1px solid var(--border); }
-#search .pagefind-ui__result-link { color: var(--link); }
-#search .pagefind-ui__result-excerpt { color: var(--muted); font-size: 13px; }
-#search mark { background: var(--accent); color: var(--bg); }
-@media (max-width: 720px) { main { padding: 16px; } }
+
+#search {
+	--pagefind-ui-primary: var(--fg);
+	--pagefind-ui-text: var(--fg);
+	--pagefind-ui-background: var(--bg);
+	--pagefind-ui-border: var(--border);
+	--pagefind-ui-tag: var(--panel);
+	--pagefind-ui-border-width: 1px;
+	--pagefind-ui-border-radius: 6px;
+	--pagefind-ui-font: inherit;
+}
+
+#search .pagefind-ui__form {
+	position: relative;
+}
+
+#search .pagefind-ui__search-input {
+	background: var(--bg);
+	color: var(--fg);
+	font-size: 14px;
+	padding: 6px 12px 6px 34px;
+	height: auto;
+}
+
+#search .pagefind-ui__search-clear {
+	background: none;
+	color: var(--muted);
+	font-size: 12px;
+}
+
+#search .pagefind-ui__drawer {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	background: var(--panel);
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	margin-top: 4px;
+	padding: 0 12px;
+	max-height: 70vh;
+	overflow-y: auto;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+#search .pagefind-ui__result {
+	border-top: 1px solid var(--border);
+}
+
+#search .pagefind-ui__result-link {
+	color: var(--link);
+}
+
+#search .pagefind-ui__result-excerpt {
+	color: var(--muted);
+	font-size: 13px;
+}
+
+#search mark {
+	background: var(--accent);
+	color: var(--bg);
+}
+
 /* 検索アイコンの位置補正 */
-#search .pagefind-ui__form::before { top: 50%; transform: translateY(-50%); left: 10px; margin: 0; opacity: .6; }
+
+#search .pagefind-ui__form::before {
+	top: 50%;
+	transform: translateY(-50%);
+	left: 10px;
+	margin: 0;
+	opacity: 0.6;
+}
+
 /* スクロールバーをテーマに合わせる（Firefox/WebKit両対応） */
-html { scrollbar-color: var(--border) var(--bg); }
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: var(--muted); }
-::-webkit-scrollbar-corner { background: var(--bg); }
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--border);
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--muted);
+}
+
+::-webkit-scrollbar-corner {
+	background: var(--bg);
+}
+
+@media (max-width: 720px) {
+	main {
+		padding: 16px;
+	}
+}
