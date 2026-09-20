@@ -34,11 +34,6 @@ pattern = "/202401090422/"
 path = "/note/202401090422-golang"
 
 [[permalinks]]
-pattern = "/202401090423/"
-[permalinks.target]
-path = "/note/202401090423-html"
-
-[[permalinks]]
 pattern = "/202401090424/"
 [permalinks.target]
 path = "/note/202401090424-javascript"
@@ -79,11 +74,6 @@ pattern = "/202401090431/"
 path = "/note/202401090431-vscode"
 
 [[permalinks]]
-pattern = "/202401090432/"
-[permalinks.target]
-path = "/note/202401090432-vuepress"
-
-[[permalinks]]
 pattern = "/202401090433/"
 [permalinks.target]
 path = "/note/202401090433-windows"
@@ -97,6 +87,26 @@ path = "/note/archive/202401090410-mdbook"
 pattern = "/202401090411/"
 [permalinks.target]
 path = "/note/archive/202401090411-rocket"
+
+[[permalinks]]
+pattern = "/202401090423/"
+[permalinks.target]
+path = "/note/archive/202401090423-html"
+
+[[permalinks]]
+pattern = "/202401090432/"
+[permalinks.target]
+path = "/note/archive/202401090432-vuepress"
+
+[[permalinks]]
+pattern = "/202604111932/"
+[permalinks.target]
+path = "/note/archive/202604111932-playwright"
+
+[[permalinks]]
+pattern = "/202609210624/"
+[permalinks.target]
+path = "/note/archive/202609210624-python"
 
 [[permalinks]]
 pattern = "/202401090412/"
@@ -157,9 +167,4 @@ path = "/note/aws/tips/202601101412-service"
 pattern = "/202601101833/"
 [permalinks.target]
 path = "/note/aws/tips/202601101833-template"
-
-[[permalinks]]
-pattern = "/202604111932/"
-[permalinks.target]
-path = "/note/python/202604111932-playwright"
 
