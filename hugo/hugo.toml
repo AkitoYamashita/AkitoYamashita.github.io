@@ -15,8 +15,6 @@ unsafe = true
 [[module.mounts]]
 source = "../markdown"
 target = "content"
-
-ignoreFiles = [
-    # 'markdown/ignore_directory/',
-    '^draft/'
+files = [
+    "! draft/**"
 ]
