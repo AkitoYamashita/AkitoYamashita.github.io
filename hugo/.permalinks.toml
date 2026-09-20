@@ -1,0 +1,165 @@
+[[permalinks]]
+pattern = "/202312230409/"
+[permalinks.target]
+path = "/log/202312230409-ec2mac"
+
+[[permalinks]]
+pattern = "/202401090409/"
+[permalinks.target]
+path = "/log/202401090409-instatapp"
+
+[[permalinks]]
+pattern = "/202509151747/"
+[permalinks.target]
+path = "/log/202509151747-architecture"
+
+[[permalinks]]
+pattern = "/202401090419/"
+[permalinks.target]
+path = "/note/202401090419-dart"
+
+[[permalinks]]
+pattern = "/202401090420/"
+[permalinks.target]
+path = "/note/202401090420-docker"
+
+[[permalinks]]
+pattern = "/202401090421/"
+[permalinks.target]
+path = "/note/202401090421-git"
+
+[[permalinks]]
+pattern = "/202401090422/"
+[permalinks.target]
+path = "/note/202401090422-golang"
+
+[[permalinks]]
+pattern = "/202401090423/"
+[permalinks.target]
+path = "/note/202401090423-html"
+
+[[permalinks]]
+pattern = "/202401090424/"
+[permalinks.target]
+path = "/note/202401090424-javascript"
+
+[[permalinks]]
+pattern = "/202401090425/"
+[permalinks.target]
+path = "/note/202401090425-linux"
+
+[[permalinks]]
+pattern = "/202401090426/"
+[permalinks.target]
+path = "/note/202401090426-mac"
+
+[[permalinks]]
+pattern = "/202401090427/"
+[permalinks.target]
+path = "/note/202401090427-markdown"
+
+[[permalinks]]
+pattern = "/202401090428/"
+[permalinks.target]
+path = "/note/202401090428-php"
+
+[[permalinks]]
+pattern = "/202401090429/"
+[permalinks.target]
+path = "/note/202401090429-terminal"
+
+[[permalinks]]
+pattern = "/202401090430/"
+[permalinks.target]
+path = "/note/202401090430-unity"
+
+[[permalinks]]
+pattern = "/202401090431/"
+[permalinks.target]
+path = "/note/202401090431-vscode"
+
+[[permalinks]]
+pattern = "/202401090432/"
+[permalinks.target]
+path = "/note/202401090432-vuepress"
+
+[[permalinks]]
+pattern = "/202401090433/"
+[permalinks.target]
+path = "/note/202401090433-windows"
+
+[[permalinks]]
+pattern = "/202401090410/"
+[permalinks.target]
+path = "/note/archive/202401090410-mdbook"
+
+[[permalinks]]
+pattern = "/202401090411/"
+[permalinks.target]
+path = "/note/archive/202401090411-rocket"
+
+[[permalinks]]
+pattern = "/202401090412/"
+[permalinks.target]
+path = "/note/aws/cfn/202401090412-codebuild"
+
+[[permalinks]]
+pattern = "/202401090413/"
+[permalinks.target]
+path = "/note/aws/cfn/202401090413-dynamodb"
+
+[[permalinks]]
+pattern = "/202401090414/"
+[permalinks.target]
+path = "/note/aws/cfn/202401090414-ec2"
+
+[[permalinks]]
+pattern = "/202401090415/"
+[permalinks.target]
+path = "/note/aws/cfn/202401090415-pipeline"
+
+[[permalinks]]
+pattern = "/202401090416/"
+[permalinks.target]
+path = "/note/aws/cfn/202401090416-rds"
+
+[[permalinks]]
+pattern = "/202401090417/"
+[permalinks.target]
+path = "/note/aws/cfn/202401090417-role-policy"
+
+[[permalinks]]
+pattern = "/202401090418/"
+[permalinks.target]
+path = "/note/aws/cfn/202401090418-s3"
+
+[[permalinks]]
+pattern = "/202512212250/"
+[permalinks.target]
+path = "/note/aws/cfn/202512212250-scp"
+
+[[permalinks]]
+pattern = "/202512212251/"
+[permalinks.target]
+path = "/note/aws/cfn/202512212251-tag-policy"
+
+[[permalinks]]
+pattern = "/202601101411/"
+[permalinks.target]
+path = "/note/aws/tips/202601101411-operation"
+
+[[permalinks]]
+pattern = "/202601101412/"
+[permalinks.target]
+path = "/note/aws/tips/202601101412-service"
+
+[[permalinks]]
+pattern = "/202601101833/"
+[permalinks.target]
+path = "/note/aws/tips/202601101833-template"
+
+[[permalinks]]
+pattern = "/202604111932/"
+[permalinks.target]
+path = "/note/python/202604111932-playwright"
+

@@ -16,4 +16,7 @@ unsafe = true
 source = "../markdown"
 target = "content"
 
-# ignoreFiles = ['markdown/ignore_directory/']
+ignoreFiles = [
+    # 'markdown/ignore_directory/',
+    '^draft/'
+]
