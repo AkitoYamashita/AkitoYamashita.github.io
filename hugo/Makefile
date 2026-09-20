@@ -36,9 +36,9 @@ dl-pagefind: # @hide
 	@mkdir -p $(BIN); os=$$(uname -s); arch=$$(uname -m); case "$$arch" in arm64|aarch64) a=aarch64 ;; *) a=x86_64 ;; esac; case "$$os" in Darwin) t=$$a-apple-darwin ;; Linux) t=$$a-unknown-linux-musl ;; MINGW*|MSYS*|CYGWIN*) t=$$a-pc-windows-msvc ;; *) echo "unsupported: $$os" >&2; exit 1 ;; esac; curl -fsSL "https://github.com/CloudCannon/pagefind/releases/download/v$(PAGEFIND_VERSION)/pagefind-v$(PAGEFIND_VERSION)-$$t.tar.gz" -o /tmp/pagefind.tar.gz; tar -xzf /tmp/pagefind.tar.gz -C $(BIN); rm -f /tmp/pagefind.tar.gz; $(BIN)/pagefind --version
 ##
 clean: # 出力とキャッシュを削除する
-	rm -rf public resources .hugo_build.lock $(PERMALINKS)
+	rm -rf public/* resources .hugo_build.lock $(PERMALINKS)
 distclean: # bin配下のバイナリも含めて削除する
-	rm -rf public resources .hugo_build.lock bin $(PERMALINKS)
+	rm -rf public/* resources .hugo_build.lock bin $(PERMALINKS)
 check: # Markdown の命名規則と Content ID の重複を確認
 	@bad=$$(find $(CONTENT)/log $(CONTENT)/note -type f -name '*.md' ! -name '_index.md' | grep -Ev '/[0-9]{12}-.+\.md$$' || true); \
 	if [ -n "$$bad" ]; then echo "invalid filename:"; echo "$$bad"; exit 1; fi
