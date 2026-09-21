@@ -21,10 +21,9 @@ files = [
 
 [params.sidebar]
 closed = [
+    "log",
     "log/2023",
     "log/2024",
-    "log/2025",
-    # "log/2026",
     "note/archive",
     "note/aws",
 ]

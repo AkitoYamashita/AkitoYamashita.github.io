@@ -34,16 +34,6 @@ pattern = "/202401090422/"
 path = "/note/202401090422-golang"
 
 [[permalinks]]
-pattern = "/202401090423/"
-[permalinks.target]
-path = "/note/202401090423-html"
-
-[[permalinks]]
-pattern = "/202401090424/"
-[permalinks.target]
-path = "/note/202401090424-javascript"
-
-[[permalinks]]
 pattern = "/202401090425/"
 [permalinks.target]
 path = "/note/202401090425-linux"
@@ -52,11 +42,6 @@ path = "/note/202401090425-linux"
 pattern = "/202401090426/"
 [permalinks.target]
 path = "/note/202401090426-macos"
-
-[[permalinks]]
-pattern = "/202401090427/"
-[permalinks.target]
-path = "/note/202401090427-markdown"
 
 [[permalinks]]
 pattern = "/202401090428/"
@@ -84,11 +69,6 @@ pattern = "/202401090433/"
 path = "/note/202401090433-windows"
 
 [[permalinks]]
-pattern = "/202604111932/"
-[permalinks.target]
-path = "/note/202604111932-playwright"
-
-[[permalinks]]
 pattern = "/202609210624/"
 [permalinks.target]
 path = "/note/202609210624-python"
@@ -104,9 +84,29 @@ pattern = "/202401090411/"
 path = "/note/archive/202401090411-rocket"
 
 [[permalinks]]
+pattern = "/202401090423/"
+[permalinks.target]
+path = "/note/archive/202401090423-html"
+
+[[permalinks]]
+pattern = "/202401090424/"
+[permalinks.target]
+path = "/note/archive/202401090424-javascript"
+
+[[permalinks]]
+pattern = "/202401090427/"
+[permalinks.target]
+path = "/note/archive/202401090427-markdown"
+
+[[permalinks]]
 pattern = "/202401090432/"
 [permalinks.target]
 path = "/note/archive/202401090432-vuepress"
+
+[[permalinks]]
+pattern = "/202604111932/"
+[permalinks.target]
+path = "/note/archive/202604111932-playwright"
 
 [[permalinks]]
 pattern = "/202401090412/"

@@ -6,6 +6,7 @@
 	<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ partial "title.html" . }} | {{ .Site.Title }}{{ end }}</title>
 	<link rel="icon" href="{{ "/favicon.png" | relURL }}" type="image/png">
 	<script>(function(){var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}})();</script>
+	<script src="{{ "/script.js" | relURL }}" defer></script>
 	<link href="{{ "/style.css" | relURL }}" rel="stylesheet">
 	<link href="{{ "/pagefind/pagefind-ui.css" | relURL }}" rel="stylesheet">
 	<script src="{{ "/pagefind/pagefind-ui.js" | relURL }}" defer></script>
@@ -28,7 +29,10 @@
 		</button>
 	</header>
 	<div class="layout">
-		<nav>{{ partial "sidebar.html" (dict "dirs" (partial "dirs.html" .) "parent" "" "depth" 0) }}</nav>
+		<nav>
+			{{ partial "sidebar.html" (dict "dirs" (partial "dirs.html" .) "parent" "" "depth" 0) }}
+			<div class="sidebar-resizer"></div>
+		</nav>
 		<main data-pagefind-body>{{ block "main" . }}{{ end }}</main>
 	</div>
 	<script>
