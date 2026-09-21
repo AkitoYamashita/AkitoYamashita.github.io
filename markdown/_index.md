@@ -5,4 +5,6 @@
 
 ## Link
 
-[version](https://akitoyamashita.github.io/version.txt)
+[Github Repository](https://github.com/AkitoYamashita/AkitoYamashita.github.io/commits/main/)
+[Site Version](https://akitoyamashita.github.io/version.txt)
+[Gist](https://gist.github.com/AkitoYamashita)
