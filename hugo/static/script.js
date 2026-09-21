@@ -8,7 +8,7 @@ resizer?.addEventListener("pointerdown", e => {
 	resizer.setPointerCapture(e.pointerId);
 
 	const move = e => {
-		const width = Math.max(160, Math.min(600, e.clientX));
+		const width = Math.max(120, Math.min(600, e.clientX));
 		root.style.setProperty("--sidebar-w", `${width}px`);
 	};
 
