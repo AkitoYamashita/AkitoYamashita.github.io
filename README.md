@@ -103,5 +103,5 @@ Content ID は新規作成時の時刻を元に発行。
 - GitBook
 - mdBook
 - Netlify CMS
-- ROcket
+- Rocket
 - Express
