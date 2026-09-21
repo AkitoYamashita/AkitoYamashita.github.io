@@ -18,3 +18,9 @@ target = "content"
 files = [
     "! draft/**"
 ]
+
+[params.sidebar]
+closed = [
+    "note/archive",
+    "note/aws",
+]

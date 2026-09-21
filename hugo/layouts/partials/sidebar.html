@@ -1,6 +1,7 @@
 {{- $dirs := .dirs -}}
 {{- $parent := .parent -}}
 {{- $depth := .depth -}}
+{{- $closed := site.Params.sidebar.closed | default slice -}}
 {{- $children := slice -}}
 {{- range $dirs -}}
 	{{- if eq $parent "" -}}
@@ -20,7 +21,7 @@
 <ul>
 	{{- range $children }}
 	<li>
-		<details open>
+		<details{{ if not (in $closed .) }} open{{ end }}>
 			<summary>{{ index (split . "/") (sub (len (split . "/")) 1) }}</summary>
 			{{ partial "sidebar.html" (dict "dirs" $dirs "parent" . "depth" (len (split . "/"))) }}
 		</details>

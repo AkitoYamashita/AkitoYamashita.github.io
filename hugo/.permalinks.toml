@@ -16,17 +16,7 @@ path = "/log/202509151747-architecture"
 [[permalinks]]
 pattern = "/202401090419/"
 [permalinks.target]
-path = "/note/202401090419-dart"
-
-[[permalinks]]
-pattern = "/202401090420/"
-[permalinks.target]
-path = "/note/202401090420-docker"
-
-[[permalinks]]
-pattern = "/202401090421/"
-[permalinks.target]
-path = "/note/202401090421-git"
+path = "/note/202401090419-flutter"
 
 [[permalinks]]
 pattern = "/202401090422/"
@@ -46,17 +36,7 @@ path = "/note/202401090425-linux"
 [[permalinks]]
 pattern = "/202401090426/"
 [permalinks.target]
-path = "/note/202401090426-mac"
-
-[[permalinks]]
-pattern = "/202401090427/"
-[permalinks.target]
-path = "/note/202401090427-markdown"
-
-[[permalinks]]
-pattern = "/202401090428/"
-[permalinks.target]
-path = "/note/202401090428-php"
+path = "/note/202401090426-macos"
 
 [[permalinks]]
 pattern = "/202401090429/"
@@ -89,9 +69,29 @@ pattern = "/202401090411/"
 path = "/note/archive/202401090411-rocket"
 
 [[permalinks]]
+pattern = "/202401090420/"
+[permalinks.target]
+path = "/note/archive/202401090420-docker"
+
+[[permalinks]]
+pattern = "/202401090421/"
+[permalinks.target]
+path = "/note/archive/202401090421-git"
+
+[[permalinks]]
 pattern = "/202401090423/"
 [permalinks.target]
 path = "/note/archive/202401090423-html"
+
+[[permalinks]]
+pattern = "/202401090427/"
+[permalinks.target]
+path = "/note/archive/202401090427-markdown"
+
+[[permalinks]]
+pattern = "/202401090428/"
+[permalinks.target]
+path = "/note/archive/202401090428-php"
 
 [[permalinks]]
 pattern = "/202401090432/"
