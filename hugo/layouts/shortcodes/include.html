@@ -1,10 +1,10 @@
-{{- /* 記事からの相対パスでファイルを読み、コードブロックとして描画する */ -}}
+{{- /* 記事からの相対パスでファイルを読み、拡張子から言語を判定して表示 */ -}}
 {{- $rel := .Get 0 -}}
-{{- $lang := .Get 1 | default "" -}}
 {{- $dir := path.Dir .Page.File.Path -}}
 {{- $p := path.Join $dir $rel -}}
+{{- $lang := strings.TrimPrefix "." (path.Ext $p) -}}
 {{- with readFile $p -}}
-{{- highlight . $lang "" -}}
+  {{- highlight . $lang "" -}}
 {{- else -}}
-<pre>include not found: {{ $p }}</pre>
+  <pre>include not found: {{ $p }}</pre>
 {{- end -}}
