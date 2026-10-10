@@ -13,7 +13,7 @@ unsafe = true
 # target = "content"
 
 [[module.mounts]]
-source = "../markdown"
+source = "../content"
 target = "content"
 files = [
     "! draft/**"

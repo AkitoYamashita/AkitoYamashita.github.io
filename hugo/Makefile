@@ -9,7 +9,7 @@ GITHUB_PAGES:="https://AkitoYamashita.github.io/"
 HUGO_VERSION:=0.166.0
 PAGEFIND_VERSION:=1.5.2
 PORT:=8080
-CONTENT:=../markdown
+CONTENT:=../content
 PERMALINKS:=.permalinks.toml
 ## local binary directory (gitignore 対象)
 BIN:=$(BASE)/bin

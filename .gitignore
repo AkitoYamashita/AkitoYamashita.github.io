@@ -8,10 +8,6 @@
 ## hugo binary
 /hugo/bin/
 
-## VuePress Extend
-/markdown/.vuepress/public/src
-/markdown/.vuepress/public/version.txt
-
 ## common
 !.gitkeep
 
