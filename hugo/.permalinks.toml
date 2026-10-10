@@ -141,17 +141,17 @@ path = "/note/aws/cfn/202401090417-role-policy"
 [[permalinks]]
 pattern = "/202401090418/"
 [permalinks.target]
-path = "/note/aws/cfn/202401090418-s3"
+path = "/note/aws/cfn/s3/202401090418-s3"
 
 [[permalinks]]
 pattern = "/202512212250/"
 [permalinks.target]
-path = "/note/aws/cfn/202512212250-scp"
+path = "/note/aws/cfn/scp/202512212250-scp"
 
 [[permalinks]]
 pattern = "/202512212251/"
 [permalinks.target]
-path = "/note/aws/cfn/202512212251-tag-policy"
+path = "/note/aws/cfn/tag-policy/202512212251-tag-policy"
 
 [[permalinks]]
 pattern = "/202601101411/"
