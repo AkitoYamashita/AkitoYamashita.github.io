@@ -1,7 +1,7 @@
 # gip.sh
 
 ```bash
-#!/bin/bas
+#!/bin/bash
 gip(){
   curl checkip.amazonaws.com
 }

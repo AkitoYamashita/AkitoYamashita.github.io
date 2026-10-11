@@ -1,7 +1,7 @@
 # gitinit.sh
 
 ```bash
-#!/bin/bas
+#!/bin/bash
 gitinit(){
   if [ $# -ne 6 ]; then
     echo "Require [host],[user],[repo],[branch],[name],[email]"
