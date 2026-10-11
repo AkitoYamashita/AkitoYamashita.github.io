@@ -28,7 +28,7 @@ gcp_gitea() {
     fi
 
     gcloud config set project [gcp-project-name]
-    gcloud compute firewall-rules update fw --source-ranges=xxx.xxx.xxx.xxx/32,"$new_ip"
+    gcloud compute firewall-rules update [gcp-firewall-rule-name] --source-ranges=xxx.xxx.xxx.xxx/32,"$new_ip"
 
     if [ $? -eq 0 ]; then
         echo "ファイアウォールルールが更新されました。新しいIP: $new_ip"

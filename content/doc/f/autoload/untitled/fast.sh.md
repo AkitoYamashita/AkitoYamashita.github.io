@@ -67,18 +67,6 @@ fpull(){
 ffetch(){
   git fetch origin
 }
-frsync(){
-  if [ $# -ne 5 ]; then
-    echo "Require [port],[from_dir],[to_user],[to_host],[to_dir]"
-    echo "e.g. frsync 22 /root/target/ ubuntu aws /home/ubuntu/target/"
-  else
-    rsync -avh  --exclude='ok' --exclude='.*' \
-      -e "ssh -p$1" \
-      $2 \
-      $3@$4://$5 \
-      --bwlimit=1024 #1Mb
-  fi
-}
 fssh(){
   if [ $# -ne 4 ]; then
     echo "Require [user],[host],[port],[identify_file]"
