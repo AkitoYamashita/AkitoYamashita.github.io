@@ -89,9 +89,10 @@ header a {
 }
 
 #search {
-	flex: 1;
-	min-width: 0;
-	max-width: 480px;
+    flex: 1;
+    min-width: 0;
+    max-width: 480px;
+    margin-left: auto;
 }
 
 .layout {
@@ -409,4 +410,12 @@ article > footer {
         max-height: calc(100dvh - var(--header-h) - 16px);
         z-index: 30;
     }
+}
+
+#search .pagefind-ui__result-thumb {
+    display: none;
+}
+
+#search .pagefind-ui__result {
+    padding: 5px 0;
 }
