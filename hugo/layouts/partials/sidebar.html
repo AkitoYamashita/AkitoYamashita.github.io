@@ -2,10 +2,12 @@
 {{- $parent := .parent -}}
 {{- $depth := .depth -}}
 {{- $expand := site.Params.sidebar.expand | default slice -}}
+{{- $exclude := site.Params.sidebar.exclude | default slice -}}
+{{- $links := site.Params.sidebar.links | default dict -}}
 {{- $children := slice -}}
 {{- range $dirs -}}
 	{{- if eq $parent "" -}}
-		{{- if eq (len (split . "/")) 1 -}}
+		{{- if and (eq (len (split . "/")) 1) (not (in $exclude .)) -}}
 			{{- $children = $children | append . -}}
 		{{- end -}}
 	{{- else -}}
@@ -17,7 +19,10 @@
 {{- $key := printf "%s/" $parent -}}
 {{- if eq $parent "" -}}{{- $key = "" -}}{{- end -}}
 {{- $pages := where site.RegularPages "File.Dir" $key -}}
-{{- if or $children $pages -}}
+{{- if and (eq $parent "") (in $exclude "page") -}}
+	{{- $pages = where $pages "File.Dir" "ne" "page/" -}}
+{{- end -}}
+{{- if or $children $pages (and (eq $parent "") $links) -}}
 <ul{{ if eq $parent "" }} class="sidebar-root"{{ end }}>
 	{{- range $children }}
 	<li>
@@ -34,6 +39,20 @@
 	{{- end }}
 	{{- range $pages }}
 	<li><a href="{{ .RelPermalink }}">{{ partial "title.html" . }}</a></li>
+	{{- end }}
+	{{- if and (eq $parent "") $links }}
+	<li>
+		<details{{ if in $expand "link" }} open{{ end }}>
+			<summary><span class="sidebar-icon sidebar-icon-link"></span>link</summary>
+			<ul>
+				{{- range $name, $url := $links }}
+				{{- $internal := hasPrefix $name "_" -}}
+				{{- $label := strings.TrimPrefix "_" $name -}}
+				<li><a href="{{ $url }}"{{ if not $internal }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ $label }}</a></li>
+				{{- end }}
+			</ul>
+		</details>
+	</li>
 	{{- end }}
 </ul>
 {{- end -}}

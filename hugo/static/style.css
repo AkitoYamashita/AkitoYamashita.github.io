@@ -98,8 +98,8 @@ header a {
 
 .layout {
 	display: flex;
-	align-items: flex-start;
-	height: 100%;
+	align-items: stretch;
+	min-height: calc(100vh - var(--header-h));
 }
 
 nav {
@@ -109,12 +109,10 @@ nav {
 	border-right: 1px solid var(--border);
 	position: sticky;
 	top: var(--header-h);
-	max-height: calc(100vh - var(--header-h));
 	overflow-y: auto;
 	font-size: 12px;
 	line-height: 1.3;
 	background: var(--panel);
-	height: 100%;
 }
 
 body.nav-closed nav {
@@ -366,19 +364,30 @@ footer {
 .sidebar-root > li > details > summary {
 	display: list-item;
 	font-weight: 700;
+	text-transform: uppercase;
+	/* text-transform: capitalize; */
 }
 
-/* 見出し左側のアイコン */
 .sidebar-root .sidebar-icon {
 	display: inline-block;
 	width: 1.3em;
-	margin-right: 5px;
+	margin-right: 3px;
 	text-align: center;
-	font-size: 0.9em;
 }
 
-/* ディレクトリ別アイコン */
-.sidebar-icon-doc::before  { content: "📄"; }
-.sidebar-icon-log::before  { content: "📅"; }
-.sidebar-icon-note::before { content: "📚"; }
-.sidebar-icon-page::before { content: "👤"; }
+.sidebar-icon { font-family: "Font Awesome 6 Free"; font-weight: 900; }
+.sidebar-icon-doc::before { content: "\f15c"; }  /* file-code */
+.sidebar-icon-log::before { content: "\f1da"; }  /* history */
+.sidebar-icon-note::before { content: "\f02d"; } /* book */
+.sidebar-icon-link::before { content: "\f0c1"; } /* link */
+.sidebar-icon-page::before { content: "\f007"; } /* user */
+
+/* サイト全体の外部リンクにアイコンを表示 */
+a:is([href^="https://"], [href^="http://"]):not([href^="https://akitoyamashita.github.io/"]):not([href^="https://localhost"])::after {
+	content: "\f35d"; /* arrow-up-right-from-square */
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	margin-left: 0.4em;
+	font-size: 0.6em;
+	opacity: 0.7;
+}

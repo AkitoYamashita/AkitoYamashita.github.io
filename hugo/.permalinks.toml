@@ -14,66 +14,6 @@ pattern = "/202509151747/"
 path = "/log/2025/202509151747-architecture"
 
 [[permalinks]]
-pattern = "/202401090419/"
-[permalinks.target]
-path = "/note/202401090419-flutter"
-
-[[permalinks]]
-pattern = "/202401090420/"
-[permalinks.target]
-path = "/note/202401090420-docker"
-
-[[permalinks]]
-pattern = "/202401090421/"
-[permalinks.target]
-path = "/note/202401090421-git"
-
-[[permalinks]]
-pattern = "/202401090422/"
-[permalinks.target]
-path = "/note/202401090422-golang"
-
-[[permalinks]]
-pattern = "/202401090425/"
-[permalinks.target]
-path = "/note/202401090425-linux"
-
-[[permalinks]]
-pattern = "/202401090426/"
-[permalinks.target]
-path = "/note/202401090426-macos"
-
-[[permalinks]]
-pattern = "/202401090428/"
-[permalinks.target]
-path = "/note/202401090428-php"
-
-[[permalinks]]
-pattern = "/202401090429/"
-[permalinks.target]
-path = "/note/202401090429-terminal"
-
-[[permalinks]]
-pattern = "/202401090430/"
-[permalinks.target]
-path = "/note/202401090430-unity"
-
-[[permalinks]]
-pattern = "/202401090431/"
-[permalinks.target]
-path = "/note/202401090431-vscode"
-
-[[permalinks]]
-pattern = "/202401090433/"
-[permalinks.target]
-path = "/note/202401090433-windows"
-
-[[permalinks]]
-pattern = "/202609210624/"
-[permalinks.target]
-path = "/note/202609210624-python"
-
-[[permalinks]]
 pattern = "/202401090410/"
 [permalinks.target]
 path = "/note/archive/202401090410-mdbook"
@@ -82,6 +22,16 @@ path = "/note/archive/202401090410-mdbook"
 pattern = "/202401090411/"
 [permalinks.target]
 path = "/note/archive/202401090411-rocket"
+
+[[permalinks]]
+pattern = "/202401090419/"
+[permalinks.target]
+path = "/note/archive/202401090419-flutter"
+
+[[permalinks]]
+pattern = "/202401090422/"
+[permalinks.target]
+path = "/note/archive/202401090422-golang"
 
 [[permalinks]]
 pattern = "/202401090423/"
@@ -94,9 +44,9 @@ pattern = "/202401090424/"
 path = "/note/archive/202401090424-javascript"
 
 [[permalinks]]
-pattern = "/202401090427/"
+pattern = "/202401090428/"
 [permalinks.target]
-path = "/note/archive/202401090427-markdown"
+path = "/note/archive/202401090428-php"
 
 [[permalinks]]
 pattern = "/202401090432/"
@@ -167,4 +117,54 @@ path = "/note/aws/tips/202601101412-service"
 pattern = "/202601101833/"
 [permalinks.target]
 path = "/note/aws/tips/202601101833-template"
+
+[[permalinks]]
+pattern = "/202401090420/"
+[permalinks.target]
+path = "/note/code/202401090420-docker"
+
+[[permalinks]]
+pattern = "/202401090421/"
+[permalinks.target]
+path = "/note/code/202401090421-git"
+
+[[permalinks]]
+pattern = "/202401090425/"
+[permalinks.target]
+path = "/note/code/202401090425-linux"
+
+[[permalinks]]
+pattern = "/202401090426/"
+[permalinks.target]
+path = "/note/code/202401090426-macos"
+
+[[permalinks]]
+pattern = "/202401090427/"
+[permalinks.target]
+path = "/note/code/202401090427-markdown"
+
+[[permalinks]]
+pattern = "/202401090429/"
+[permalinks.target]
+path = "/note/code/202401090429-terminal"
+
+[[permalinks]]
+pattern = "/202401090430/"
+[permalinks.target]
+path = "/note/code/202401090430-unity"
+
+[[permalinks]]
+pattern = "/202401090431/"
+[permalinks.target]
+path = "/note/code/202401090431-vscode"
+
+[[permalinks]]
+pattern = "/202401090433/"
+[permalinks.target]
+path = "/note/code/202401090433-windows"
+
+[[permalinks]]
+pattern = "/202609210624/"
+[permalinks.target]
+path = "/note/code/202609210624-python"
 

@@ -8,10 +8,6 @@ enableGitInfo = true
 [markup.goldmark.renderer]
 unsafe = true
 
-# [[module.mounts]]
-# source = "content"
-# target = "content"
-
 [[module.mounts]]
 source = "../content"
 target = "content"
@@ -21,9 +17,18 @@ files = [
 
 [params.sidebar]
 expand = [
-    "doc",
-    "log",
-    "note",
-    "note/aws",
-    "page",
+    # "doc",
+    # "log",
+    # "note",
+    # "note/aws",
+    "link",
 ]
+exclude = ["page"]
+
+[params.sidebar.links]
+# 内部リンクは先頭にアンダーバーをつける(_blankにしない)
+_profile = "/page/201204010101-profile/"
+gist = "https://gist.github.com/AkitoYamashita"
+github = "https://github.com/AkitoYamashita"
+repo = "https://github.com/AkitoYamashita/AkitoYamashita.github.io/"
+version = "https://akitoyamashita.github.io/version.txt"
