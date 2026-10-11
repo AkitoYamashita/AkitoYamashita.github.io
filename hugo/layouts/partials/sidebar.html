@@ -1,7 +1,7 @@
 {{- $dirs := .dirs -}}
 {{- $parent := .parent -}}
 {{- $depth := .depth -}}
-{{- $closed := site.Params.sidebar.closed | default slice -}}
+{{- $expand := site.Params.sidebar.expand | default slice -}}
 {{- $children := slice -}}
 {{- range $dirs -}}
 	{{- if eq $parent "" -}}
@@ -18,11 +18,16 @@
 {{- if eq $parent "" -}}{{- $key = "" -}}{{- end -}}
 {{- $pages := where site.RegularPages "File.Dir" $key -}}
 {{- if or $children $pages -}}
-<ul>
+<ul{{ if eq $parent "" }} class="sidebar-root"{{ end }}>
 	{{- range $children }}
 	<li>
-		<details{{ if not (in $closed .) }} open{{ end }}>
-			<summary>{{ index (split . "/") (sub (len (split . "/")) 1) }}</summary>
+		<details{{ if in $expand . }} open{{ end }}>
+			<summary>
+				{{- if eq $parent "" -}}
+					<span class="sidebar-icon sidebar-icon-{{ . }}"></span>
+				{{- end -}}
+				{{ index (split . "/") (sub (len (split . "/")) 1) }}
+			</summary>
 			{{ partial "sidebar.html" (dict "dirs" $dirs "parent" . "depth" (len (split . "/"))) }}
 		</details>
 	</li>

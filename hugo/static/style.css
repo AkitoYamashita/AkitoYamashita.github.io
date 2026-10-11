@@ -356,3 +356,29 @@ footer {
 	height: 100%;
 	cursor: col-resize;
 }
+
+/* トップ階層の間隔 */
+.sidebar-root > li + li {
+	margin-top: 5px;
+}
+
+/* トップ階層の見出し */
+.sidebar-root > li > details > summary {
+	display: list-item;
+	font-weight: 700;
+}
+
+/* 見出し左側のアイコン */
+.sidebar-root .sidebar-icon {
+	display: inline-block;
+	width: 1.3em;
+	margin-right: 5px;
+	text-align: center;
+	font-size: 0.9em;
+}
+
+/* ディレクトリ別アイコン */
+.sidebar-icon-doc::before  { content: "📄"; }
+.sidebar-icon-log::before  { content: "📅"; }
+.sidebar-icon-note::before { content: "📚"; }
+.sidebar-icon-page::before { content: "👤"; }

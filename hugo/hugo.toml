@@ -20,10 +20,10 @@ files = [
 ]
 
 [params.sidebar]
-closed = [
+expand = [
+    "doc",
     "log",
-    "log/2023",
-    "log/2024",
-    "note/archive",
+    "note",
     "note/aws",
+    "page",
 ]
