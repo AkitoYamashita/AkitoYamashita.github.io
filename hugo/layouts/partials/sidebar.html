@@ -1,6 +1,7 @@
 {{- $dirs := .dirs -}}
 {{- $parent := .parent -}}
 {{- $depth := .depth -}}
+{{- $currentURI := .currentURI | default "" -}}
 {{- $expand := site.Params.sidebar.expand | default slice -}}
 {{- $exclude := site.Params.sidebar.exclude | default slice -}}
 {{- $links := site.Params.sidebar.links | default dict -}}
@@ -26,14 +27,14 @@
 <ul{{ if eq $parent "" }} class="sidebar-root"{{ end }}>
 	{{- range $children }}
 	<li>
-		<details{{ if in $expand . }} open{{ end }}>
+		<details{{ if or (in $expand .) (hasPrefix $currentURI (printf "/%s/" .)) }} open{{ end }}>
 			<summary>
 				{{- if eq $parent "" -}}
 					<span class="sidebar-icon sidebar-icon-{{ . }}"></span>
 				{{- end -}}
 				{{ index (split . "/") (sub (len (split . "/")) 1) }}
 			</summary>
-			{{ partial "sidebar.html" (dict "dirs" $dirs "parent" . "depth" (len (split . "/"))) }}
+			{{ partial "sidebar.html" (dict "dirs" $dirs "parent" . "depth" (len (split . "/")) "currentURI" $currentURI) }}
 		</details>
 	</li>
 	{{- end }}

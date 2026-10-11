@@ -31,7 +31,7 @@
 	</header>
 	<div class="layout">
 		<nav>
-			{{ partial "sidebar.html" (dict "dirs" (partial "dirs.html" .) "parent" "" "depth" 0) }}
+			{{ partial "sidebar.html" (dict "dirs" (partial "dirs.html" .) "parent" "" "depth" 0 "currentURI" .RelPermalink) }}
 			<div class="sidebar-resizer"></div>
 		</nav>
 		<main data-pagefind-body>{{ block "main" . }}{{ end }}</main>

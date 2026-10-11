@@ -19,8 +19,7 @@ files = [
 expand = [
     # "doc",
     # "log",
-    # "note",
-    # "note/aws",
+    "note",
     "link",
 ]
 exclude = ["page"]
