@@ -31,8 +31,6 @@ html[data-theme="light"] {
 }
 
 html {
-	height: 100%;
-	overflow-y: scroll;
 	scrollbar-color: var(--border) var(--bg);
 }
 
