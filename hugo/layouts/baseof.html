@@ -6,8 +6,8 @@
 	<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ partial "title.html" . }} | {{ .Site.Title }}{{ end }}</title>
 	<link rel="icon" href="{{ "/favicon.png" | relURL }}" type="image/png">
 	<script>(function(){var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}})();</script>
-	<script src="{{ "/script.js" | relURL }}" defer></script>
-	<link href="{{ "/style.css" | relURL }}" rel="stylesheet">
+	<script src="{{ printf "%s?v=%s" ("/script.js" | relURL) (md5 (readFile "static/script.js")) }}" defer></script>
+	<link href="{{ printf "%s?v=%s" ("/style.css" | relURL) (md5 (readFile "static/style.css")) }}" rel="stylesheet">
 	<link href="{{ "/pagefind/pagefind-ui.css" | relURL }}" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 	<script src="{{ "/pagefind/pagefind-ui.js" | relURL }}" defer></script>
