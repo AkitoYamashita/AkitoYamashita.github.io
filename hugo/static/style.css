@@ -397,3 +397,16 @@ article > footer {
     font-size: 0.8em;
     text-align: right;
 }
+
+@media (max-width: 720px) {
+    #search .pagefind-ui__drawer {
+        position: fixed;
+        top: var(--header-h);
+        left: 8px;
+        right: 8px;
+        width: auto;
+        margin-top: 4px;
+        max-height: calc(100dvh - var(--header-h) - 16px);
+        z-index: 30;
+    }
+}
